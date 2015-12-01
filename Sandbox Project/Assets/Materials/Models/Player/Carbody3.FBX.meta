@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e2bdbac4c5079a7468677449f1335fd8
-timeCreated: 1448828797
+guid: 9778e3c6353d53c44b89c43184b3d4bc
+timeCreated: 1448963918
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Small Fighter Hull001
+    4300000: Box002
     7400000: Take 001
     9500000: //RootNode
   materials:
