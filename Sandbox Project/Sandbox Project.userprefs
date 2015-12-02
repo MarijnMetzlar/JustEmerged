@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GravityBody.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BlueEnemies.cs">
     <Files>
-      <File FileName="Assets\Scripts\GravityBody.cs" Line="21" Column="1" />
+      <File FileName="Assets\Scripts\GravityBody.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnEnemiesBlue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tower\Tower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tower\SpawnTower.cs" Line="11" Column="50" />
+      <File FileName="Assets\Scripts\BlueEnemies.cs" Line="7" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -26,4 +26,13 @@ public class PlayerController : MonoBehaviour {
 			transform.Rotate (Vector3.up * rotateSpeed);
 		}
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "ToNextScene") 
+		{
+			Destroy (other.gameObject);
+			//Application.LoadLevel("BossFight");
+		}
+	}
 }
