@@ -54,8 +54,11 @@
      <Compile Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\Scripts\Car\CamRotation.cs" />
+     <Compile Include="Assets\Scripts\Car\CameraRotation.cs" />
+     <Compile Include="Assets\Scripts\Car\MoveCar.cs" />
+     <Compile Include="Assets\Scripts\Car\RotateGuns.cs" />
      <Compile Include="Assets\Scripts\Enemies\BlueEnemies.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Spawning\SpawnEnemiesBlue.cs" />
      <Compile Include="Assets\Scripts\Spawning\SpawnGarage.cs" />
      <Compile Include="Assets\Scripts\TerrainPlacer.cs" />
@@ -64,6 +67,7 @@
      <Compile Include="Assets\xFirstConceptx\Scripts\CreatePlanet6th.cs" />
      <Compile Include="Assets\xFirstConceptx\Scripts\GravityAttractor.cs" />
      <Compile Include="Assets\xFirstConceptx\Scripts\GravityBody.cs" />
+     <Compile Include="Assets\xFirstConceptx\Scripts\PlayerController.cs" />
      <Compile Include="Assets\xFirstConceptx\Scripts\RandomPlanet.cs" />
      <None Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\AssetsUnity\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
