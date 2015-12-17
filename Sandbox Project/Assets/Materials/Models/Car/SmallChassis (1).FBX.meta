@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 199df7cce29cd0d41bf7d9149de00a71
-timeCreated: 1448876571
+guid: 51014403e1ee9cb4c8dd857a944a6242
+timeCreated: 1449484571
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Frontwheel
+    4300000: SmallChassis001
     9500000: //RootNode
   materials:
     importMaterials: 1

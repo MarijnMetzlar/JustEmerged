@@ -4,21 +4,21 @@ using System.Collections;
 public class MoveCar : MonoBehaviour {
 
     [Header("(Turn)Speed")]
-    public float speedForward = 20;
-    private float speedSaveforward;
-    public float speedBackward = -20;
-    public float speedMultiplier = 1;
+    public float speedForward = 30;
+    public float speedBackward = -10;
     public float turnSpeed = 200;
-    private float movingFwBw;
+    public float accelerationSpeed = 0.1f;
     private float movingLeRi;
     private float turning;
+    private float speedSaveForward;
+    private float accelerationSaveSpeed;
 
     [Header("Jumping")]
-    public float jumpStrength= 10;
+    public float jumpStrength = 10;
+    public float JumpCountDowntime = 2;
     private float jumpTime;
     private float jumpSaveTime;
     private float jumpCountDown = 0;
-    public float JumpCountDowntime = 0;
 
     [Header("Wheels")]
     public Transform wheelFLTrans;
@@ -30,39 +30,50 @@ public class MoveCar : MonoBehaviour {
     [Header("Boosters")]
     public ParticleSystem BoosterL;
     public ParticleSystem BoosterR;
-    public float maxBoost = 5;
+    public float maxBoost = 3;
     private float boosterSpeed;
-    public float boosterMultiplier = 3;
-    private float boosterRemaining = 5;
+    public float boosterMultiplier = 2;
+    private float boosterRemaining = 3;
     private float boosterTillRefill;
     public float boosterTime = 3;
     public float boosterRefillTime = 3;
+    private float accelerationBooster;
 
     [Header("Side Boosters")]
-    public float boosterSideSpeed = 80;
+    public float boosterSideSpeed = 50;
     private float boosterSideTime = 0;
     private float boosterSideCountDown = 3;
-
     private bool boostingSideways;
+
+    [Header("Gun")]
+    public int gunDamage = 2;
 
     [Header("Timer")]
     private float timer;
 
+    private Rigidbody rb;
+    public float carHP = 20;
+
     // Use this for initialization
     void Start() {
-        speedSaveforward = speedForward * speedMultiplier;
-        boosterSpeed = speedSaveforward * boosterMultiplier * speedMultiplier;
+        boosterSpeed = speedForward * boosterMultiplier;
+        speedSaveForward = speedForward;
+        accelerationSaveSpeed = accelerationSpeed;
+        accelerationBooster = accelerationSpeed * 2;
         jumpTime = jumpStrength / 20;
         jumpSaveTime = jumpTime;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate() {
         TimeStuff();
-        HandBrake();
         WheelRotation();
         JumpUp();
         BoostSide();
+        Booster();
+        MovementFwBw();
+        MovementLeRi();
 
         turning = turning + 1;
         if (turning >= 360)
@@ -70,7 +81,6 @@ public class MoveCar : MonoBehaviour {
             turning = 0;
         }
 
-        transform.Translate(Vector3.forward * movingFwBw * Time.deltaTime);
         transform.Rotate(0, movingLeRi * Time.deltaTime, 0);
     }
 
@@ -152,8 +162,8 @@ public class MoveCar : MonoBehaviour {
         //Debug.Log("booster till refill + " + boosterTillRefill);
         if (Input.GetKey(KeyCode.LeftShift) && boosterRemaining > 0)
         {
-            movingFwBw = boosterSpeed;
-            MovementLeRi(true);
+            speedForward = boosterSpeed;
+            accelerationSpeed = accelerationBooster;
             BoosterL.Emit(500);
             BoosterR.Emit(500);
 
@@ -162,6 +172,8 @@ public class MoveCar : MonoBehaviour {
         }
         else
         {
+            accelerationSpeed = accelerationSaveSpeed;
+
             if (boosterTillRefill >= boosterTime && boosterRemaining <= maxBoost)
             {
                 boosterRemaining = boosterRemaining + Time.deltaTime * boosterRefillTime;
@@ -169,62 +181,56 @@ public class MoveCar : MonoBehaviour {
         }
     }
 
-    void HandBrake()
-    {
-        if(Input.GetKey(KeyCode.G))
-        {
-            movingFwBw = 0;
-            MovementLeRi(true);
-        }
-        else
-        {
-            MovementFwBw();
-            Booster();
-            MovementLeRi(false);
-        }
-    }
-
     void WheelRotation()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            wheelFLTrans.localRotation = Quaternion.Euler(0, turnWheelLeftorRight + 90, 15 * turning * movingFwBw * Time.deltaTime * 1);
-            wheelFRTrans.localRotation = Quaternion.Euler(0, turnWheelLeftorRight + 90, 15 * turning * movingFwBw * Time.deltaTime * 1);
+            wheelFLTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * -1, turnWheelLeftorRight, 0);
+            wheelFRTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * -1, turnWheelLeftorRight, 0);
         }
         else
         {
-            wheelFLTrans.localRotation = Quaternion.Euler(0, turnWheelLeftorRight + 90, 15 * turning * movingFwBw * Time.deltaTime * 1);
-            wheelFRTrans.localRotation = Quaternion.Euler(0, turnWheelLeftorRight + 90, 15 * turning * movingFwBw * Time.deltaTime * 1);
+            wheelFLTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * 1, turnWheelLeftorRight, 0);
+            wheelFRTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * 1, turnWheelLeftorRight, 0);
         }
         
-        wheelRLTrans.localRotation = Quaternion.Euler(0, 90, 15 * turning * movingFwBw * Time.deltaTime -1);
-        wheelRRTrans.localRotation = Quaternion.Euler(0, 90, 15 * turning * movingFwBw * Time.deltaTime -1);
+        wheelRLTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime - 1, 0, 0);
+        wheelRRTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime - 1, 0, 0);
     }
 
     void MovementFwBw()
     {
+        //Debug.Log(rb.velocity.magnitude);
         if (Input.GetKey(KeyCode.W) == true)
         {
-            movingFwBw = speedForward * speedMultiplier;
+            if (rb.velocity.magnitude <= speedForward)
+            {
+                rb.AddRelativeForce(Vector3.forward * accelerationSpeed, ForceMode.Acceleration);
+            }
         }
         if (Input.GetKey(KeyCode.S) == true)
         {
-            movingFwBw = speedBackward;
+            if (rb.velocity.magnitude <= speedBackward)
+            {
+                rb.AddRelativeForce(Vector3.forward * -accelerationSpeed, ForceMode.Acceleration);
+            }
         }
-        if (Input.GetKey(KeyCode.S) == false && Input.GetKey(KeyCode.W) == false)
+        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false)
         {
-            movingFwBw = 0;
-            movingLeRi = 0;
+            if (rb.velocity.magnitude > speedSaveForward)
+            {
+                speedForward = rb.velocity.magnitude;
+            }
         }
     }
 
-    void MovementLeRi(bool handbrakePressed)
+    void MovementLeRi()
     {
         if (Input.GetKey(KeyCode.D))
         {
             turnWheelLeftorRight = turnSpeed;
 
-            if (Input.GetKey(KeyCode.S) && handbrakePressed == false || Input.GetKey(KeyCode.W) && handbrakePressed == false || Input.GetKey(KeyCode.LeftShift) && handbrakePressed == false)
+            if (rb.velocity.magnitude > 0.1 || rb.velocity.magnitude < -0.1)
             {
                 movingLeRi = turnSpeed;
             }
@@ -233,7 +239,7 @@ public class MoveCar : MonoBehaviour {
         {
             turnWheelLeftorRight = -turnSpeed;
 
-            if (Input.GetKey(KeyCode.S) && handbrakePressed == false || Input.GetKey(KeyCode.W) && handbrakePressed == false || Input.GetKey(KeyCode.LeftShift) && handbrakePressed == false)
+            if (rb.velocity.magnitude < -0.1 || rb.velocity.magnitude > 0.1)
             {
                 movingLeRi = -turnSpeed;
             }

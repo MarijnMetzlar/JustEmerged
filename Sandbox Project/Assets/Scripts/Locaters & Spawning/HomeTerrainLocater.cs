@@ -4,7 +4,7 @@ using System.Collections;
 public class HomeTerrainLocater : MonoBehaviour {
 
 	public Transform garagePrefab;
-	public Transform player;
+	//public Transform player;
 
 	public int garageLocation;
 	public Vector3 garagePosition;
@@ -38,7 +38,7 @@ public class HomeTerrainLocater : MonoBehaviour {
 			garagePosition = new Vector3 (homePosition.x, homePosition.y - 30.5f, homePosition.z - 250.0f);
 		}
 
-		Instantiate (player, homePosition, Quaternion.identity);
+		//Instantiate (player, homePosition, Quaternion.identity);
 		Instantiate (garagePrefab, garagePosition, Quaternion.identity);
 	}
 }

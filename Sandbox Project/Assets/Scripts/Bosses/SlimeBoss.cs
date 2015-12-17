@@ -5,12 +5,15 @@ public class SlimeBoss : MonoBehaviour {
 	
 	public float targetDistance;
 	public float enemyMovementSpeed;
+	public float jumpSpeed;
 	public float damping;
+
+	private float jumpTimer = 0.0f;
 	private float elapsedTime = 0.0f;
 
 	public float spawnDistance;
 	public float enemyHeight;
-	
+
 	public GameObject target;
 	public Transform blobPrefab;
 	
@@ -32,7 +35,14 @@ public class SlimeBoss : MonoBehaviour {
 	void AttackPlayer()
 	{
 		transform.Translate (Vector3.forward * enemyMovementSpeed * Time.deltaTime);
-		//jump
+
+		jumpTimer += Time.deltaTime;
+		if (jumpTimer >= 5.0f) 
+		{
+			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
+
+			jumpTimer = 0.0f;
+		}
 	}
 	
 	void Shoot()
@@ -42,7 +52,6 @@ public class SlimeBoss : MonoBehaviour {
 		{
 			Vector3 enemyPosition = transform.position + (transform.forward * spawnDistance) + (transform.up * enemyHeight);
 			Instantiate (blobPrefab, enemyPosition, transform.rotation);
-
 			elapsedTime = 0.0f;
 		}
 	}

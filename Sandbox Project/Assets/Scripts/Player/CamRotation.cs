@@ -1,25 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/*
- * Change the camera into an orbital camera.An orbital is a camera
- * that can be rotated and that will automatically reorient itself to
- * always point to the target.
- * 
- * The orbit camera allow zooming and dezooming with the mouse wheel.
- *
- * By clicking the mouse and dragging on the screen, the camera is moved.
- * The angle of rotation correspond to the distance the cursor travelled. 
- *  
- * The camera will keep the angular position when the button is pressed.To
- * rotate more, simply repress the mouse button et move the cursor.
- *
- * This script must be added on a camera object.
- *
- * @author Mentalogicus
- * @date 11-2011
- */
-
 public class CamRotation : MonoBehaviour
 {
     //private  bool mouseClickjudge = false;
@@ -59,7 +40,7 @@ public class CamRotation : MonoBehaviour
         _x = angles.x;
         _y = angles.y;
 
-        this.Rotate(_x, _y);
+        //this.Rotate(_x, _y);
 
     }
 
@@ -91,7 +72,7 @@ public class CamRotation : MonoBehaviour
                 _x = lowestRotation;
             }
 
-            Debug.Log(_x);
+            //Debug.Log(_x);
             this.Rotate(_x, _y);
         }
         else
@@ -100,7 +81,7 @@ public class CamRotation : MonoBehaviour
             //_y = carRoty * 60;
             this.Rotate(_x, _y);
 
-            Debug.Log(_y);
+            //Debug.Log(_y);
         }
 
         // sMoostening cam

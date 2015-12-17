@@ -3,25 +3,30 @@ using System.Collections;
 
 public class RotateGuns : MonoBehaviour {
 
-    public Transform targetPos;
+    private GameObject crosshair;
+    private CameraRotation cameraClick;
 
     public ParticleSystem Bullets;
 
 	// Use this for initialization
 	void Start () {
-	    
+        crosshair = GameObject.Find("Crosshair");
+        cameraClick = GameObject.Find("Main Camera").GetComponent<CameraRotation>();
 	}
 
     void Rotation()
     {
-        transform.LookAt(targetPos);
+        transform.LookAt(crosshair.transform);
     }
 
     void ShootGun()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (cameraClick.moveMouseCrosshair == true)
         {
-            Bullets.Emit(100);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Bullets.Emit(100);
+            }
         }
     }
 
@@ -29,5 +34,6 @@ public class RotateGuns : MonoBehaviour {
 	void Update () {
         Rotation();
         ShootGun();
+
 	}
 }

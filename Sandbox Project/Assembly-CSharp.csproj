@@ -63,8 +63,11 @@
      <Compile Include="Assets\Scripts\Locaters &amp; Spawning\SpawnEnemiesBlue.cs" />
      <Compile Include="Assets\Scripts\Player\CamRotation.cs" />
      <Compile Include="Assets\Scripts\Player\CameraRotation.cs" />
+     <Compile Include="Assets\Scripts\Player\HittingEnemies.cs" />
+     <Compile Include="Assets\Scripts\Player\HittingPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\MoveCar.cs" />
      <Compile Include="Assets\Scripts\Player\RotateGuns.cs" />
+     <Compile Include="Assets\Scripts\Player\StatsEnemy.cs" />
      <Compile Include="Assets\Scripts\PlayerTeleportation.cs" />
      <Compile Include="Assets\Scripts\Tower\SpawnTower.cs" />
      <Compile Include="Assets\Scripts\Tower\Tower.cs" />
