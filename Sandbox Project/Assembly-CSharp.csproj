@@ -55,6 +55,7 @@
      <Compile Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\Scripts\Bosses\Blob.cs" />
+     <Compile Include="Assets\Scripts\Bosses\MiniSlime.cs" />
      <Compile Include="Assets\Scripts\Bosses\SlimeBoss.cs" />
      <Compile Include="Assets\Scripts\Enemies\MetalBullet.cs" />
      <Compile Include="Assets\Scripts\Enemies\MetalEnemy.cs" />

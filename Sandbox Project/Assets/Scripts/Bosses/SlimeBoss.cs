@@ -8,52 +8,77 @@ public class SlimeBoss : MonoBehaviour {
 	public float jumpSpeed;
 	public float damping;
 
-	private float jumpTimer = 0.0f;
-	private float elapsedTime = 0.0f;
-
-	public float spawnDistance;
 	public float enemyHeight;
+	public float shootDistance;
+
+	private float jumpTimer = 0.0f;
+	private float shootTimer = 0.0f;
+	private float testTimer = 0.0f;
 
 	public GameObject target;
-	public Transform blobPrefab;
-	
-	void FixedUpdate () 
+	public Transform slimeRocketPrefab;
+	public Transform slimePrefab;
+
+	public Vector3 slimeBossPosition;
+
+	void Update () 
 	{
 		targetDistance = Vector3.Distance (GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>().position, transform.position);
 		
 		LookAtPlayer ();
-		AttackPlayer ();
-		Shoot ();
+		Jump ();
+
+		//if the boss got hit multiple times create mini slimes
+		testTimer += Time.deltaTime;
+		if (testTimer >= 10.0f) 
+		{
+			GotDamaged ();
+			testTimer = 0.0f;
+		}
 	}
 	
 	void LookAtPlayer()
 	{
 		Quaternion rotation = Quaternion.LookRotation (GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>().position - transform.position);
 		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
+
+		//Vector3 playerPosition = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ().position;
+		//gameObject.transform.LookAt (playerPosition);
 	}
 	
-	void AttackPlayer()
+	void Jump()
 	{
-		transform.Translate (Vector3.forward * enemyMovementSpeed * Time.deltaTime);
-
 		jumpTimer += Time.deltaTime;
-		if (jumpTimer >= 5.0f) 
+
+		if (jumpTimer >= 3.5f) 
 		{
-			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpSpeed);
+			gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.up * jumpSpeed);
 
 			jumpTimer = 0.0f;
 		}
-	}
-	
-	void Shoot()
-	{
-		elapsedTime += Time.deltaTime;
-		if (elapsedTime > 1.0f) 
-		{
-			Vector3 enemyPosition = transform.position + (transform.forward * spawnDistance) + (transform.up * enemyHeight);
-			Instantiate (blobPrefab, enemyPosition, transform.rotation);
-			elapsedTime = 0.0f;
-		}
+
+		if (gameObject.transform.position.y > 45.0f) {
+			transform.Translate (Vector3.forward * enemyMovementSpeed * Time.deltaTime);
+		} 
 	}
 
+	void GotDamaged()
+	{
+		slimeBossPosition = GameObject.FindGameObjectWithTag ("SlimeBoss").GetComponent<Transform> ().position;
+
+		Instantiate (slimePrefab, new Vector3 (slimeBossPosition.x + 30.0f, slimeBossPosition.y + 2.0f, slimeBossPosition.z), Quaternion.identity);
+		Instantiate (slimePrefab, new Vector3 (slimeBossPosition.x - 30.0f, slimeBossPosition.y + 2.0f, slimeBossPosition.z), Quaternion.identity);
+		Instantiate (slimePrefab, new Vector3 (slimeBossPosition.x, slimeBossPosition.y + 2.0f, slimeBossPosition.z + 30.0f), Quaternion.identity);
+	}
+
+	void Shoot()
+	{
+//		shootTimer += Time.deltaTime;
+//		if (shootTimer > 5.0f) 
+//		{
+//			Vector3 enemyPosition = transform.position + (transform.forward * shootDistance) + (transform.up * enemyHeight);
+//			Instantiate (slimeRocketPrefab, enemyPosition, transform.rotation);
+//			shootTimer = 0.0f;
+//		}
+	}
 }
