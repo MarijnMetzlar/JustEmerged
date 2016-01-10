@@ -1,13 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\CameraRotation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tower\SpawnTower.cs">
     <Files>
-      <File FileName="Assets\Scripts\Bosses\SlimeBoss.cs" Line="46" Column="50" />
-      <File FileName="Assets\Scripts\Bosses\MiniSlime.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bosses\Blob.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\HittingPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\HittingEnemies.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\CameraRotation.cs" Line="77" Column="1" />
+      <File FileName="Assets\Scripts\Tower\SpawnTower.cs" Line="254" Column="4" />
+      <File FileName="Assets\Scripts\CombatSystem\StatsEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CombatSystem\HittingPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CombatSystem\HittingEnemies.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

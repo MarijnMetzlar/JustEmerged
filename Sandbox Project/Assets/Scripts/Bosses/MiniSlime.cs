@@ -42,7 +42,7 @@ public class MiniSlime : MonoBehaviour {
 			jumpTimer = 0.0f;
 		}
 		
-		if (gameObject.transform.position.y > 45.0f) 
+		if (gameObject.transform.position.y > 42.0f) 
 		{
 			transform.Translate (Vector3.forward * enemyMovementSpeed * Time.deltaTime);
 		}

@@ -6,6 +6,19 @@ public class MetalBullet : MonoBehaviour {
 	private float speed = 10.0f;
 	private float elapsedTime = 0.0f;
 
+	private float healthPoints;
+	private float damageMetalEnemy;
+
+	void Start()
+	{
+		healthPoints = GetComponent<MoveCar>().carHP;
+		damageMetalEnemy = GetComponent<StatsEnemy>().dmgRangeMetalEnemy;
+
+		Debug.Log ("HI");
+		Debug.Log (healthPoints);
+		Debug.Log (damageMetalEnemy);
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -19,6 +32,16 @@ public class MetalBullet : MonoBehaviour {
 		{
 			Destroy(gameObject);
 			elapsedTime = 0.0f;
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Player") 
+		{
+			Debug.Log("You got hit");
+			healthPoints = healthPoints - damageMetalEnemy;
+			Destroy(gameObject);
 		}
 	}
 }

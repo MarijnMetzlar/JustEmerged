@@ -4,7 +4,7 @@ using System.Collections;
 public class SpawnTower : MonoBehaviour {
 
 	public Transform towerPrefab;
-	public int tower;
+	public static int tower;
 	public int locationTower;
 
 	// Use this for initialization
@@ -235,27 +235,22 @@ public class SpawnTower : MonoBehaviour {
 
 		if(locationTower == 1)
 		{
-			Debug.Log("Snow terrain has no tower yet!");
+			Instantiate (towerPrefab, new Vector3 (LocaterSnow.x - 316.2f, 51.7f, LocaterSnow.z - 615.4f), Quaternion.identity);
 		}
 		
 		else if(locationTower == 2)
 		{
-			Debug.Log("Snow terrain has no tower yet!");
+			Instantiate (towerPrefab, new Vector3 (LocaterSnow.x - 387.8f, 71.3f, LocaterSnow.z - 404.6f), Quaternion.identity);
 		}
 		
 		else if(locationTower == 3)
 		{
-			Debug.Log("Snow terrain has no tower yet!");
+			Instantiate (towerPrefab, new Vector3 (LocaterSnow.x - 218.4f, 9.2f, LocaterSnow.z - 157.1f), Quaternion.identity);
 		}
 		
-		else if(locationTower == 4)
+		else
 		{
-			Debug.Log("Snow terrain has no tower yet!");
-		}
-		
-		else 
-		{
-			Debug.Log("Snow terrain has no tower yet!");
+			Instantiate (towerPrefab, new Vector3 (LocaterSnow.x - 575.5f, -12.3f, LocaterSnow.z - 552.7f), Quaternion.identity);
 		}
 	}
 

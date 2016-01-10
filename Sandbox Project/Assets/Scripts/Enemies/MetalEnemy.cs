@@ -9,8 +9,7 @@ public class MetalEnemy : MonoBehaviour {
 	public float enemyMovementSpeed;
 	public float damping;
 	private float elapsedTime = 0.0f;
-
-	public GameObject target;
+	
 	public GameObject testBulletPrefab;
 	private float spawnDistance = 1.1f;
 	private float enemyHeight = 1.1f;
