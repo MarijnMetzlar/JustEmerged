@@ -3,7 +3,10 @@ using System.Collections;
 
 public class StatsEnemy : MonoBehaviour {
 
-    [Header("MiniSlime")]
+	[Header("Car")]
+	public float hpCar = 10;
+
+	[Header("MiniSlime")]
     public float hpMiniSlime = 5;
     public float dmgMiniSlime = 1;
     

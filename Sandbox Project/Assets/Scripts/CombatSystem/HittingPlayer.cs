@@ -6,22 +6,23 @@ public class HittingPlayer : MonoBehaviour {
     public float healthPoints;
     private MoveCar carHP;
     private StatsEnemy damage;
-	private float damageAtt1;
 	private float damageAtt2;
 
 	// Use this for initialization
 	void Start () 
 	{
-        healthPoints = GetComponent<MoveCar>().carHP;
-		damageAtt1 = GetComponent<StatsEnemy>().dmgPhysicalSlimeBoss;
+		healthPoints = GameObject.Find("car").GetComponent<MoveCar>().carHP;
 		damageAtt2 = GetComponent<StatsEnemy>().dmgRangeSlimeBoss;
-
 	}
 
 	void OnTriggerEnter (Collider other)
 	{
-		Debug.Log ("ouch");
-		healthPoints = healthPoints - damageAtt1;
+		if (other.gameObject.tag == "MetalRocket") 
+		{
+			healthPoints = healthPoints - 2;
+			Destroy(other.gameObject);
+
+		}
 	}
 
     void OnParticleCollision()

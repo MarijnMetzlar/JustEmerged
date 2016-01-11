@@ -50,32 +50,32 @@ public class SpawnTower : MonoBehaviour {
 
 		if(locationTower == 1)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 368.4f, 60.0f, LocaterAlienForest.z + 412.0f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 368.4f, 60.0f, LocaterAlienForest.z + 412.0f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 2)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 344.0f, 60.0f, LocaterAlienForest.z - 16.0f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 344.0f, 60.0f, LocaterAlienForest.z - 16.0f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 3)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 118.6f, 60.0f, LocaterAlienForest.z + 189.5f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 118.6f, 60.0f, LocaterAlienForest.z + 189.5f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 4)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 60.0f, LocaterAlienForest.z + 233.3f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 60.0f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 5)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 53.6f, LocaterAlienForest.z + 233.3f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 53.6f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 458.7f, 53.6f, LocaterAlienForest.z + 233.3f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 458.7f, 53.6f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
 		}
 	}
 
@@ -85,27 +85,27 @@ public class SpawnTower : MonoBehaviour {
 
 		if(locationTower == 1)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x + 402.6f, 50.8f, LocaterRocky.z + 314.0f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x + 402.6f, 50.8f, LocaterRocky.z + 314.0f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 2)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x + 196.8f, 146.2f, LocaterRocky.z + 223.6f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x + 196.8f, 146.2f, LocaterRocky.z + 223.6f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 3)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x - 53.3f, 49.4f, LocaterRocky.z + 122.1f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x - 53.3f, 49.4f, LocaterRocky.z + 122.1f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 4)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x - 26.4f, 87.8f, LocaterRocky.z - 90.0f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x - 26.4f, 87.8f, LocaterRocky.z - 90.0f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else 
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x - 171.2f, 95.5f, LocaterRocky.z - 177.3f), Quaternion.identity);
+			Instantiate (towerPrefab, new Vector3 (LocaterRocky.x - 171.2f, 95.5f, LocaterRocky.z - 177.3f), Quaternion.Euler(270, 0, 0));
 		}
 	}
 

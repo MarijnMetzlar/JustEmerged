@@ -3,18 +3,35 @@ using System.Collections;
 
 public class SpawnEnemies : MonoBehaviour {
 
-	public Transform testEnemyPrefab;
+	public Transform metalEnemyPrefab;
+	public Transform slimePrefab;
 
 	private int testEnemyLocation;
 
 	// Use this for initialization
 	void Start () 
 	{
-		Vector3 testEnemyPosition = (GameObject.FindGameObjectWithTag ("LocationMetal").GetComponent<Transform>().position);
+		SpawnMetalEnemies ();
+		SpawnSlimeEnemies ();
+	}
 
+	void SpawnMetalEnemies ()
+	{
+		Vector3 metalPosition = (GameObject.FindGameObjectWithTag ("LocationMetal").GetComponent<Transform>().position);
+		
 		for (int i = 0; i < 20; i++) 
 		{
-			Instantiate (testEnemyPrefab, new Vector3 (Random.Range (testEnemyPosition.x - 250.0f, testEnemyPosition.x + 250.0f), testEnemyPosition.y + 130.0f, Random.Range (testEnemyPosition.z - 250.0f, testEnemyPosition.z + 250.0f)), Quaternion.identity);
+			Instantiate (metalEnemyPrefab, new Vector3 (Random.Range (metalPosition.x - 250.0f, metalPosition.x + 250.0f), metalPosition.y + 130.0f, Random.Range (metalPosition.z - 250.0f, metalPosition.z + 250.0f)), Quaternion.identity);
+		}
+	}
+
+	void SpawnSlimeEnemies ()
+	{
+		Vector3 slimePosition = (GameObject.FindGameObjectWithTag ("LocationMetal").GetComponent<Transform>().position);
+		
+		for (int i = 0; i < 20; i++) 
+		{
+			Instantiate (slimePrefab, new Vector3 (Random.Range (slimePosition.x - 250.0f, slimePosition.x + 250.0f), slimePosition.y + 130.0f, Random.Range (slimePosition.z - 250.0f, slimePosition.z + 250.0f)), Quaternion.identity);
 		}
 	}
 }
