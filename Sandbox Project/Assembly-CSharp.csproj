@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Enemies\MetalEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\SlimeEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\SpawnEnemies.cs" />
+     <Compile Include="Assets\Scripts\FadeInScreen.cs" />
      <Compile Include="Assets\Scripts\Locaters &amp; Spawning\HomeTerrainLocater.cs" />
      <Compile Include="Assets\Scripts\Locaters &amp; Spawning\SpawnEnemiesBlue.cs" />
      <Compile Include="Assets\Scripts\Player\CamRotation.cs" />
