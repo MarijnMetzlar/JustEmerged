@@ -17,8 +17,6 @@ public class HittingPlayer : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		Debug.Log ("ouch");
-
 		if (other.gameObject.tag == "SlimeEnemy") 
 		{
 			healthPoints = healthPoints - 2;
@@ -43,6 +41,12 @@ public class HittingPlayer : MonoBehaviour {
 		if (other.gameObject.tag == "SlimeBoss") 
 		{
 			healthPoints = healthPoints - 3;
+		}
+
+		if (other.gameObject.tag == "PoolOfDeath") 
+		{
+			Debug.Log("OUCH");
+			healthPoints = healthPoints - 0.5f;
 		}
 	}
 

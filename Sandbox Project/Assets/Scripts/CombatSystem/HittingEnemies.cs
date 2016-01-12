@@ -39,6 +39,12 @@ public class HittingEnemies : MonoBehaviour {
 			damagePoints = stats.dmgRangeSlimeBoss;
 		}
 
+		else if (enemyType == 4)							//Ancient Tree Boss
+		{
+			healthPoints = stats.hpAncientTreeBoss;
+			damagePoints = stats.dmgAncientTreeBoss;
+		}
+
 
         gunDamage = GameObject.Find("car").GetComponent<MoveCar>().gunDamage;
     }
