@@ -27,7 +27,7 @@ public class SpawnEnemies : MonoBehaviour {
 
 	void SpawnSlimeEnemies ()
 	{
-		Vector3 slimePosition = (GameObject.FindGameObjectWithTag ("LocationMetal").GetComponent<Transform>().position);
+		Vector3 slimePosition = (GameObject.FindGameObjectWithTag ("LocationPlasma").GetComponent<Transform>().position);
 		
 		for (int i = 0; i < 20; i++) 
 		{

@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CombatSystem\StatsEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\MetalBullet.cs" />
      <Compile Include="Assets\Scripts\Enemies\MetalEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\SlimeEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\SpawnEnemies.cs" />
      <Compile Include="Assets\Scripts\Locaters &amp; Spawning\HomeTerrainLocater.cs" />
      <Compile Include="Assets\Scripts\Locaters &amp; Spawning\SpawnEnemiesBlue.cs" />

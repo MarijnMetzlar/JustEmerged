@@ -1,28 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MiniSlime : MonoBehaviour {
+public class SlimeEnemy : MonoBehaviour {
 
 	public float targetDistance;
+	public float enemyLookDistance;
+	public float attackDistance;
+
 	public float enemyMovementSpeed;
 	public float jumpSpeed;
 	public float damping;
 	
 	private float jumpTimer;
 	
-	void Start ()
-	{
-		GameObject _SlimeBoss = GameObject.FindGameObjectWithTag ("SlimeBoss");
-		Physics.IgnoreCollision(_SlimeBoss.GetComponent<Collider>(), GetComponent<Collider>());
-	}
-	
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
 		targetDistance = Vector3.Distance (GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>().position, transform.position);
 		
-		LookAtPlayer ();
-		Jump ();
+		if (targetDistance < enemyLookDistance) 
+		{
+			LookAtPlayer ();
+		} 
+
+		if (targetDistance < attackDistance) 
+		{
+			Jump ();
+		}
 	}
 	
 	void LookAtPlayer()

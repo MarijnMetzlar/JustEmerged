@@ -17,11 +17,32 @@ public class HittingPlayer : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
+		Debug.Log ("ouch");
+
+		if (other.gameObject.tag == "SlimeEnemy") 
+		{
+			healthPoints = healthPoints - 2;
+		}
+
+		if (other.gameObject.tag == "MetalEnemy") 
+		{
+			healthPoints = healthPoints - 2;
+		}
+
 		if (other.gameObject.tag == "MetalRocket") 
 		{
 			healthPoints = healthPoints - 2;
 			Destroy(other.gameObject);
+		}
 
+		if (other.gameObject.tag == "MiniSlime") 
+		{
+			healthPoints = healthPoints - 1;
+		}
+
+		if (other.gameObject.tag == "SlimeBoss") 
+		{
+			healthPoints = healthPoints - 3;
 		}
 	}
 
@@ -34,7 +55,8 @@ public class HittingPlayer : MonoBehaviour {
     void Update () {
         if (healthPoints <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag ("Player"));
+			Application.LoadLevel("SandBox");
         }
         //Debug.Log(healthPoints);
     }
