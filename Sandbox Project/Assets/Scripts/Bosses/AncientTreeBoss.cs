@@ -6,7 +6,7 @@ public class AncientTreeBoss : MonoBehaviour {
 	public float rootsAreaTimer = 3.0f;
 	public Vector3 placementPool;
 	public Transform poolOfDeathPrefab;
-	private float spawnDistance = 5.0f;
+	private float spawnDistance = 1.0f;
 
 	// Update is called once per frame
 	void Update () 

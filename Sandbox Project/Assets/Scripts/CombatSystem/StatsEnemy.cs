@@ -14,7 +14,7 @@ public class StatsEnemy : MonoBehaviour {
 
 	//bosses and enemies from that spawns through boss battles
 	[Header("AncientTreeBoss")]
-	public float hpAncientTreeBoss = 200;
+	public float hpAncientTreeBoss = 300;
 	public float dmgAncientTreeBoss = 2;
 
 	[Header("MiniSlime")]
@@ -22,7 +22,7 @@ public class StatsEnemy : MonoBehaviour {
     public float dmgMiniSlime = 1;
     
 	[Header("SlimeBoss")]
-	public float hpSlimeBoss = 100;
+	public float hpSlimeBoss = 300;
 	public float dmgPhysicalSlimeBoss = 3;
 	public float dmgRangeSlimeBoss = 1;
 }

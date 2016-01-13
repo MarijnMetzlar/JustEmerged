@@ -35,6 +35,11 @@ public class SlimeBoss : MonoBehaviour {
 			GotDamaged ();
 			testTimer = 0.0f;
 		}
+
+		if (gameObject.transform.position.y < 10.0f) 
+		{
+			transform.Translate(0.0f, 40.0f, 0.0f);
+		}
 	}
 	
 	void LookAtPlayer()
@@ -69,16 +74,5 @@ public class SlimeBoss : MonoBehaviour {
 		Instantiate (slimePrefab, new Vector3 (slimeBossPosition.x + 30.0f, slimeBossPosition.y + 2.0f, slimeBossPosition.z), Quaternion.identity);
 		Instantiate (slimePrefab, new Vector3 (slimeBossPosition.x - 30.0f, slimeBossPosition.y + 2.0f, slimeBossPosition.z), Quaternion.identity);
 		Instantiate (slimePrefab, new Vector3 (slimeBossPosition.x, slimeBossPosition.y + 2.0f, slimeBossPosition.z + 30.0f), Quaternion.identity);
-	}
-
-	void Shoot()
-	{
-//		shootTimer += Time.deltaTime;
-//		if (shootTimer > 5.0f) 
-//		{
-//			Vector3 enemyPosition = transform.position + (transform.forward * shootDistance) + (transform.up * enemyHeight);
-//			Instantiate (slimeRocketPrefab, enemyPosition, transform.rotation);
-//			shootTimer = 0.0f;
-//		}
 	}
 }
