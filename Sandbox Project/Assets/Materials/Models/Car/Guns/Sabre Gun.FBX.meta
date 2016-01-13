@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: ec65f6be557af4d459a3e04670d19ae2
+timeCreated: 1452686962
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BasePoint
+    100002: BasePoint001
+    100004: BasePoint002
+    100006: BasePoint003
+    100008: BasePoint004
+    100010: BasePoint005
+    100012: Blade
+    100014: Blade001
+    100016: "Bo\xEEte001"
+    100018: Cross
+    100020: Cross over
+    100022: Cross002
+    100024: Cross003
+    100026: Cylindre001
+    100028: Cylindre002
+    100030: Cylindre003
+    100032: Cylindre004
+    100034: Cylindre005
+    100036: Grippoint
+    100038: Grippoint002
+    100040: Grippoint003
+    100042: Grippoint004
+    100044: Grippoint005
+    100046: Grippoint006
+    100048: Kylo Handle
+    100050: Kylo Size 26
+    100052: Long Guard 28 cm
+    100054: Long Handle 27
+    100056: Pommel 003
+    100058: Pommel 01
+    100060: Pommel 02
+    100062: Pommelspike
+    100064: Pommelspike001
+    100066: Pommelspike002
+    100068: Pommelspike003
+    100070: Pommelspike004
+    100072: Pommelspike005
+    100074: Saber bottom Griebel
+    100076: Saber hilt
+    100078: Saber hilt001
+    100080: Sabre
+    100082: //RootNode
+    100084: Sabre002
+    100086: Sabre003
+    100088: Short Guard 25 cm
+    100090: Short Guard 25 cm001
+    100092: Short Handle 019
+    100094: Short Handle 18
+    400000: BasePoint
+    400002: BasePoint001
+    400004: BasePoint002
+    400006: BasePoint003
+    400008: BasePoint004
+    400010: BasePoint005
+    400012: Blade
+    400014: Blade001
+    400016: "Bo\xEEte001"
+    400018: Cross
+    400020: Cross over
+    400022: Cross002
+    400024: Cross003
+    400026: Cylindre001
+    400028: Cylindre002
+    400030: Cylindre003
+    400032: Cylindre004
+    400034: Cylindre005
+    400036: Grippoint
+    400038: Grippoint002
+    400040: Grippoint003
+    400042: Grippoint004
+    400044: Grippoint005
+    400046: Grippoint006
+    400048: Kylo Handle
+    400050: Kylo Size 26
+    400052: Long Guard 28 cm
+    400054: Long Handle 27
+    400056: Pommel 003
+    400058: Pommel 01
+    400060: Pommel 02
+    400062: Pommelspike
+    400064: Pommelspike001
+    400066: Pommelspike002
+    400068: Pommelspike003
+    400070: Pommelspike004
+    400072: Pommelspike005
+    400074: Saber bottom Griebel
+    400076: Saber hilt
+    400078: Saber hilt001
+    400080: Sabre
+    400082: //RootNode
+    400084: Sabre002
+    400086: Sabre003
+    400088: Short Guard 25 cm
+    400090: Short Guard 25 cm001
+    400092: Short Handle 019
+    400094: Short Handle 18
+    2300000: BasePoint
+    2300002: BasePoint001
+    2300004: BasePoint002
+    2300006: BasePoint003
+    2300008: BasePoint004
+    2300010: BasePoint005
+    2300012: Blade
+    2300014: Blade001
+    2300016: "Bo\xEEte001"
+    2300018: Cross
+    2300020: Cross over
+    2300022: Cross002
+    2300024: Cross003
+    2300026: Cylindre001
+    2300028: Cylindre002
+    2300030: Cylindre003
+    2300032: Cylindre004
+    2300034: Cylindre005
+    2300036: Grippoint
+    2300038: Grippoint002
+    2300040: Grippoint003
+    2300042: Grippoint004
+    2300044: Grippoint005
+    2300046: Grippoint006
+    2300048: Kylo Handle
+    2300050: Kylo Size 26
+    2300052: Long Guard 28 cm
+    2300054: Long Handle 27
+    2300056: Pommel 003
+    2300058: Pommel 01
+    2300060: Pommel 02
+    2300062: Pommelspike
+    2300064: Pommelspike001
+    2300066: Pommelspike002
+    2300068: Pommelspike003
+    2300070: Pommelspike004
+    2300072: Pommelspike005
+    2300074: Saber bottom Griebel
+    2300076: Saber hilt
+    2300078: Saber hilt001
+    2300080: Sabre
+    2300082: Sabre002
+    2300084: Sabre003
+    2300086: Short Guard 25 cm
+    2300088: Short Guard 25 cm001
+    2300090: Short Handle 019
+    2300092: Short Handle 18
+    3300000: BasePoint
+    3300002: BasePoint001
+    3300004: BasePoint002
+    3300006: BasePoint003
+    3300008: BasePoint004
+    3300010: BasePoint005
+    3300012: Blade
+    3300014: Blade001
+    3300016: "Bo\xEEte001"
+    3300018: Cross
+    3300020: Cross over
+    3300022: Cross002
+    3300024: Cross003
+    3300026: Cylindre001
+    3300028: Cylindre002
+    3300030: Cylindre003
+    3300032: Cylindre004
+    3300034: Cylindre005
+    3300036: Grippoint
+    3300038: Grippoint002
+    3300040: Grippoint003
+    3300042: Grippoint004
+    3300044: Grippoint005
+    3300046: Grippoint006
+    3300048: Kylo Handle
+    3300050: Kylo Size 26
+    3300052: Long Guard 28 cm
+    3300054: Long Handle 27
+    3300056: Pommel 003
+    3300058: Pommel 01
+    3300060: Pommel 02
+    3300062: Pommelspike
+    3300064: Pommelspike001
+    3300066: Pommelspike002
+    3300068: Pommelspike003
+    3300070: Pommelspike004
+    3300072: Pommelspike005
+    3300074: Saber bottom Griebel
+    3300076: Saber hilt
+    3300078: Saber hilt001
+    3300080: Sabre
+    3300082: Sabre002
+    3300084: Sabre003
+    3300086: Short Guard 25 cm
+    3300088: Short Guard 25 cm001
+    3300090: Short Handle 019
+    3300092: Short Handle 18
+    4300000: Long Handle 27
+    4300002: Long Guard 28 cm
+    4300004: Blade
+    4300006: Pommel 01
+    4300008: Short Handle 18
+    4300010: Short Guard 25 cm
+    4300012: Pommel 02
+    4300014: Saber hilt
+    4300016: Saber bottom Griebel
+    4300018: Pommelspike005
+    4300020: Pommelspike004
+    4300022: Pommelspike003
+    4300024: Pommelspike002
+    4300026: Pommelspike001
+    4300028: Pommelspike
+    4300030: Grippoint003
+    4300032: Grippoint002
+    4300034: Grippoint004
+    4300036: Grippoint005
+    4300038: Grippoint006
+    4300040: Grippoint
+    4300042: Cylindre004
+    4300044: Cylindre005
+    4300046: Cylindre003
+    4300048: Cylindre002
+    4300050: Cylindre001
+    4300052: "Bo\xEEte001"
+    4300054: Cross002
+    4300056: Cross
+    4300058: BasePoint005
+    4300060: BasePoint004
+    4300062: BasePoint003
+    4300064: BasePoint002
+    4300066: BasePoint001
+    4300068: BasePoint
+    4300070: Cross over
+    4300072: Kylo Size 26
+    4300074: Kylo Handle
+    4300076: Saber hilt001
+    4300078: Cross003
+    4300080: Short Handle 019
+    4300082: Short Guard 25 cm001
+    4300084: Blade001
+    4300086: Pommel 003
+    4300088: Sabre
+    4300090: Sabre002
+    4300092: Sabre003
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
