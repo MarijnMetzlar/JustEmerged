@@ -8,6 +8,10 @@ public class RotateGuns : MonoBehaviour {
 
     public ParticleSystem Bullets;
 
+	private bool Sound = false;
+	public AudioSource GunSound;
+	public AudioSource LaserSound;
+
 	// Use this for initialization
 	void Start () {
         crosshair = GameObject.Find("Crosshair");
@@ -26,6 +30,18 @@ public class RotateGuns : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Bullets.Emit(100);
+				//sounds need to switch after one click!
+				if(Sound == false)
+				{
+					GunSound.Play();
+					Sound = true;
+
+				}
+				else
+				{
+					LaserSound.Play();
+					Sound = false;
+				}
             }
         }
     }
