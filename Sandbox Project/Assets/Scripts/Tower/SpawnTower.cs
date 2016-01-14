@@ -10,7 +10,7 @@ public class SpawnTower : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		tower = Random.Range (1, 9);
+		tower = 1; //Random.Range (1, 9);
 		locationTower = Random.Range (1, 7);
 
 		switch (tower) 
@@ -50,32 +50,32 @@ public class SpawnTower : MonoBehaviour {
 
 		if(locationTower == 1)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 368.4f, 60.0f, LocaterAlienForest.z + 412.0f), Quaternion.Euler(270, 0, 0));
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 368.4f, 40.0f, LocaterAlienForest.z + 412.0f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 2)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 344.0f, 60.0f, LocaterAlienForest.z - 16.0f), Quaternion.Euler(270, 0, 0));
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x - 344.0f, 40.0f, LocaterAlienForest.z - 16.0f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 3)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 118.6f, 60.0f, LocaterAlienForest.z + 189.5f), Quaternion.Euler(270, 0, 0));
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 118.6f, 40.0f, LocaterAlienForest.z + 189.5f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 4)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 60.0f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 40.0f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else if(locationTower == 5)
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 53.6f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 253.8f, 40.0f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
 		}
 		
 		else
 		{
-			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 458.7f, 53.6f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
+			Instantiate (towerPrefab, new Vector3 (LocaterAlienForest.x + 458.7f, 40.0f, LocaterAlienForest.z + 233.3f), Quaternion.Euler(270, 0, 0));
 		}
 	}
 

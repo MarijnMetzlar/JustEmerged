@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour {
 	{
 		if (SpawnTower.tower == 1) 
 		{
-			Debug.Log ("Load Boss level 1");
+			Application.LoadLevel("Boss area 5");
 		}
 
 		else if (SpawnTower.tower == 2) 

@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CombatSystem\StatsEnemy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tower\Tower.cs">
     <Files>
-      <File FileName="Assets\Scripts\CombatSystem\HittingPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CombatSystem\StatsEnemy.cs" Line="25" Column="30" />
-      <File FileName="Assets\Scripts\CombatSystem\HittingEnemies.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bosses\SlimeBoss.cs" Line="41" Column="31" />
+      <File FileName="Assets\Scripts\Tower\Tower.cs" Line="15" Column="38" />
+      <File FileName="Assets\Scripts\Enemies\SnakeEnemy.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
