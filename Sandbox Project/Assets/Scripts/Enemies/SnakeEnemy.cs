@@ -18,6 +18,11 @@ public class SnakeEnemy : MonoBehaviour {
 	private bool hasAttacked = false;
 	
 	
+	void Start ()
+	{
+		gameObject.GetComponent<Renderer> ().material.color = Color.green;
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{

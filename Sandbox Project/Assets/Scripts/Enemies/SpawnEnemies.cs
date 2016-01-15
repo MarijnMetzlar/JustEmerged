@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnEnemies : MonoBehaviour {
 
+	public Transform snakeEnemyPrefab;
 	public Transform metalEnemyPrefab;
 	public Transform slimePrefab;
 
@@ -11,8 +12,19 @@ public class SpawnEnemies : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		SpawnSnakes ();
 		SpawnMetalEnemies ();
 		SpawnSlimeEnemies ();
+	}
+
+	void SpawnSnakes()
+	{
+		Vector3 alienPosition = (GameObject.FindGameObjectWithTag ("LocationAlien").GetComponent<Transform>().position);
+
+		for (int i = 0; i < 20; i++) 
+		{
+			Instantiate (snakeEnemyPrefab, new Vector3 (Random.Range (alienPosition.x - 250.0f, alienPosition.x + 250.0f), alienPosition.y + 50.0f, Random.Range (alienPosition.z - 250.0f, alienPosition.z + 250.0f)), Quaternion.identity);
+		}
 	}
 
 	void SpawnMetalEnemies ()
