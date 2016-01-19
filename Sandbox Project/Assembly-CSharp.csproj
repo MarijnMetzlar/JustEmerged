@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\PlayerTeleportation.cs" />
      <Compile Include="Assets\Scripts\Tower\SpawnTower.cs" />
      <Compile Include="Assets\Scripts\Tower\Tower.cs" />
+     <Compile Include="Assets\Scripts\TutorialText\TutorialText.cs" />
      <Compile Include="Assets\Scripts\WorldGeneration\TerrainPlacer.cs" />
      <Compile Include="Assets\Scripts\WorldGeneration\TerrainRenderer.cs" />
      <Compile Include="Assets\xFirstConceptx\Scripts\CreatePlanet6th.cs" />
@@ -92,17 +93,11 @@
      <None Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\AssetsUnity\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
