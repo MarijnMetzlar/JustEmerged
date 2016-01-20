@@ -21,15 +21,11 @@ public class MoveCar : MonoBehaviour {
     private float jumpCountDown = 0;
 
     [Header("Wheels")]
-    public Transform wheelFLTrans;
-    public Transform wheelFRTrans;
-    public Transform wheelRLTrans;
-    public Transform wheelRRTrans;
     private float turnWheelLeftorRight;
 
     [Header("Boosters")]
-    public ParticleSystem BoosterL;
-    public ParticleSystem BoosterR;
+    //public ParticleSystem BoosterL;
+    //public ParticleSystem BoosterR;
     public float maxBoost = 3;
     private float boosterSpeed;
     public float boosterMultiplier = 2;
@@ -38,6 +34,7 @@ public class MoveCar : MonoBehaviour {
     public float boosterTime = 3;
     public float boosterRefillTime = 3;
     private float accelerationBooster;
+    private float boosterSpeedForward;
 
     [Header("Side Boosters")]
     public float boosterSideSpeed = 50;
@@ -51,30 +48,50 @@ public class MoveCar : MonoBehaviour {
     [Header("Timer")]
     private float timer;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     public float carHP = 20;
+
+    private RaycastHit hit;
+    private float dis;
+    private Vector3 dir;
+    private Transform centerOfMass;
+
+    public GameObject FL;
+    public GameObject FR;
+    public GameObject RL;
+    public GameObject RR;
+
+    public bool getObjects = false;
 
     // Use this for initialization
     void Start() {
-        boosterSpeed = speedForward * boosterMultiplier;
+        boosterSpeed = accelerationSpeed * boosterMultiplier;
+        boosterSpeedForward = speedForward * 2;
         speedSaveForward = speedForward;
         accelerationSaveSpeed = accelerationSpeed;
         accelerationBooster = accelerationSpeed * 2;
         jumpTime = jumpStrength / 20;
         jumpSaveTime = jumpTime;
         rb = GetComponent<Rigidbody>();
+        centerOfMass = GameObject.Find("Center of mass").GetComponent<Transform>();
+        rb.centerOfMass = centerOfMass.localPosition;
+
     }
 
-    // Update is called once per frame
     void FixedUpdate() {
+        FL = GameObject.Find("WheelFL");
+        FR = GameObject.Find("WheelFR");
+        RL = GameObject.Find("WheelRL");
+        RR = GameObject.Find("WheelRR");
+
         TimeStuff();
-        WheelRotation();
         JumpUp();
         BoostSide();
         Booster();
         MovementFwBw();
         MovementLeRi();
-
+        FlipCar();
+        
         turning = turning + 1;
         if (turning >= 360)
         {
@@ -156,16 +173,16 @@ public class MoveCar : MonoBehaviour {
 
     }
 
-    void Booster()
+   void Booster()
     {
         //Debug.Log("booster remaining + " + boosterRemaining);
         //Debug.Log("booster till refill + " + boosterTillRefill);
         if (Input.GetKey(KeyCode.LeftShift) && boosterRemaining > 0)
         {
-            speedForward = boosterSpeed;
-            accelerationSpeed = accelerationBooster;
-            BoosterL.Emit(500);
-            BoosterR.Emit(500);
+            speedForward = boosterSpeedForward;
+            accelerationSpeed = boosterSpeed;
+            //BoosterL.Emit(500);
+            //BoosterR.Emit(500);
 
             boosterRemaining = boosterRemaining - Time.deltaTime;
             boosterTillRefill = 0;
@@ -173,6 +190,7 @@ public class MoveCar : MonoBehaviour {
         else
         {
             accelerationSpeed = accelerationSaveSpeed;
+            speedForward = speedSaveForward;
 
             if (boosterTillRefill >= boosterTime && boosterRemaining <= maxBoost)
             {
@@ -181,73 +199,64 @@ public class MoveCar : MonoBehaviour {
         }
     }
 
-    void WheelRotation()
-    {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        {
-            wheelFLTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * -1, turnWheelLeftorRight, 0);
-            wheelFRTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * -1, turnWheelLeftorRight, 0);
-        }
-        else
-        {
-            wheelFLTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * 1, turnWheelLeftorRight, 0);
-            wheelFRTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime * 1, turnWheelLeftorRight, 0);
-        }
-        
-        wheelRLTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime - 1, 0, 0);
-        wheelRRTrans.localRotation = Quaternion.Euler(15 * turning * rb.velocity.magnitude * Time.deltaTime - 1, 0, 0);
-    }
-
     void MovementFwBw()
     {
-        //Debug.Log(rb.velocity.magnitude);
+        float torque = Input.GetAxis("Vertical") * accelerationSpeed;
         if (Input.GetKey(KeyCode.W) == true)
         {
             if (rb.velocity.magnitude <= speedForward)
             {
-                rb.AddRelativeForce(Vector3.forward * accelerationSpeed, ForceMode.Acceleration);
+                FL.GetComponent<CarWheels>().Move(torque);
+                FR.GetComponent<CarWheels>().Move(torque);
+            }
+            else
+            {
+                FL.GetComponent<CarWheels>().Move(0);
+                FR.GetComponent<CarWheels>().Move(0);
             }
         }
-        if (Input.GetKey(KeyCode.S) == true)
+        else if (Input.GetKey(KeyCode.S) == true)
         {
             if (rb.velocity.magnitude <= speedBackward)
             {
-                rb.AddRelativeForce(Vector3.forward * -accelerationSpeed, ForceMode.Acceleration);
+                FL.GetComponent<CarWheels>().Move(torque);
+                FR.GetComponent<CarWheels>().Move(torque);
             }
-        }
-        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false)
-        {
-            if (rb.velocity.magnitude > speedSaveForward)
+            else
             {
-                speedForward = rb.velocity.magnitude;
+                FL.GetComponent<CarWheels>().Move(0);
+                FR.GetComponent<CarWheels>().Move(0);
             }
         }
+        else
+        {
+            FL.GetComponent<CarWheels>().Move(0);
+            FR.GetComponent<CarWheels>().Move(0);
+        }
+        Debug.Log(rb.velocity.magnitude);
     }
 
     void MovementLeRi()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            turnWheelLeftorRight = turnSpeed;
+        float turnAngle = Input.GetAxis("Horizontal") * turnSpeed;
 
-            if (rb.velocity.magnitude > 0.1 || rb.velocity.magnitude < -0.1)
-            {
-                movingLeRi = turnSpeed;
-            }
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            turnWheelLeftorRight = -turnSpeed;
+        FL.GetComponent<CarWheels>().Turn(turnAngle);
+        FR.GetComponent<CarWheels>().Turn(turnAngle);
 
-            if (rb.velocity.magnitude < -0.1 || rb.velocity.magnitude > 0.1)
-            {
-                movingLeRi = -turnSpeed;
-            }
-        }
-        if (Input.GetKey(KeyCode.A) == false && Input.GetKey(KeyCode.D) == false)
+    }
+
+    void FlipCar()
+    {
+        if (Vector3.Dot(transform.up, Vector3.down) > 0.5f && Input.GetKey(KeyCode.L))
         {
-            turnWheelLeftorRight = 0;
-            movingLeRi = 0;
+            transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);
+            speedForward = speedSaveForward;
+
+        }
+        else if (Vector3.Dot(transform.up, Vector3.down) > 0.5f)
+        {
+            //rb.velocity = 0;
         }
     }
 }

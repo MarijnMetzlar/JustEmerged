@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CameraRotation : MonoBehaviour {
 
     private GameObject targetObject;
     private GameObject targetEmpty;
+    private Image buttonCrosshair;
     public bool moveMouseCrosshair = false;
     private Vector3 offset;
     public float distanceObject = -20.0f;
@@ -13,13 +15,15 @@ public class CameraRotation : MonoBehaviour {
     private float mousePosx = 0.0f;
     private float mousePosy = 0.0f;
     private Vector3 distanceVector;
+    public bool inGarage = true;
 
     // Use this for initialization
     
     void Start()
     {
         targetObject = GameObject.Find("car");
-        targetEmpty = GameObject.Find("CamTarget");
+        targetEmpty = GameObject.Find("Right click Cam");
+        buttonCrosshair = GameObject.Find("Crosshair").GetComponent<Image>();
 
         offset = targetObject.transform.position - transform.position;
 
@@ -35,11 +39,20 @@ public class CameraRotation : MonoBehaviour {
 
     void RotateMouseCam()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && moveMouseCrosshair == false)
+        if (inGarage == false)
         {
-            moveMouseCrosshair = true;
+            if (Input.GetKeyDown(KeyCode.Mouse1) && moveMouseCrosshair == false)
+            {
+                moveMouseCrosshair = true;
+                buttonCrosshair.enabled = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1) && moveMouseCrosshair == true)
+            {
+                moveMouseCrosshair = false;
+                buttonCrosshair.enabled = false;
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1) && moveMouseCrosshair == true)
+        else
         {
             moveMouseCrosshair = false;
         }

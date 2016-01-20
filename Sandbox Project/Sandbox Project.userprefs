@@ -1,9 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TutorialText\TutorialText.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\CameraRotation.cs">
     <Files>
-      <File FileName="Assets\Scripts\TutorialText\TutorialText.cs" Line="57" Column="20" />
-      <File FileName="..\..\..\Hanze CSV1B\Year 2\Period 1\Project\The Olympics\Assets\Scripts\ScriptsForOlympics\Robot\RobotText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TutorialText\TutorialText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CombatSystem\HittingEnemies.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\MakingCar.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\CameraRotation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\MoveCar.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CombatSystem\HittingPlayer.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
