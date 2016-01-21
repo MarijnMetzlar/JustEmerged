@@ -233,7 +233,7 @@ public class MoveCar : MonoBehaviour {
             FL.GetComponent<CarWheels>().Move(0);
             FR.GetComponent<CarWheels>().Move(0);
         }
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
     void MovementLeRi()

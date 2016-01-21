@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TutorialText\TutorialText.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\MoveCar.cs">
     <Files>
-      <File FileName="Assets\Scripts\TutorialText\TutorialText.cs" Line="10" Column="23" />
-      <File FileName="Assets\Scripts\CombatSystem\HittingEnemies.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\MoveCar.cs" Line="236" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

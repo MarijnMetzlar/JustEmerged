@@ -10,39 +10,42 @@ public class HittingEnemies : MonoBehaviour {
     public float healthPoints;
     public float damagePoints;
 
+	public static int MiniBossKills = 3;
+
     // Use this for initialization
     void Start () {
         stats = GetComponent<StatsEnemy>();
 
-        if (enemyType == 0)									//Metal Enemy
-		{
+        if (enemyType == 0) 
+		{												//Metal Enemy
 			healthPoints = stats.hpMetalEnemy;
 			damagePoints = stats.dmgPhysicalMetalEnemy;
-		}
-
-		else if (enemyType == 1)						    //Slime Enemy
-		{
+		} 
+		else if (enemyType == 1) 
+		{						    					//Slime Enemy
 			healthPoints = stats.hpSlimeEnemy;
 			damagePoints = stats.dmgPhysicalSlimeEnemy;
-		}
-
-		else if (enemyType == 2)							//Mini Slime
-		{
+		} 
+		else if (enemyType == 2)
+		{												//Mini Slime
 			healthPoints = stats.hpMiniSlime;
 			damagePoints = stats.dmgMiniSlime;
-		}
-		
-		else if (enemyType == 3)							//Slime Boss
-		{
+		} 
+		else if (enemyType == 3) 
+		{												//Slime Boss
 			healthPoints = stats.hpSlimeBoss;
 			damagePoints = stats.dmgPhysicalSlimeBoss;
 			damagePoints = stats.dmgRangeSlimeBoss;
-		}
-
-		else if (enemyType == 4)							//Ancient Tree Boss
-		{
+		} 
+		else if (enemyType == 4)
+		{												//Ancient Tree Boss
 			healthPoints = stats.hpAncientTreeBoss;
 			damagePoints = stats.dmgAncientTreeBoss;
+		} 
+		else if (enemyType == 5) 
+		{												//Scrub Lord
+			healthPoints = stats.hpScrubLord;
+			damagePoints = stats.dmgPhysicalScrubLord;
 		}
 
 
@@ -55,10 +58,17 @@ public class HittingEnemies : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	    if (healthPoints <= 0)
         {
             Destroy(this.gameObject);
         }
+
+		if(enemyType == 5 && healthPoints <= 0)
+		{
+			Debug.Log("you killed 1 miniboss");
+			MiniBossKills -= 1;
+		}
 	}
 }

@@ -25,4 +25,9 @@ public class StatsEnemy : MonoBehaviour {
 	public float hpSlimeBoss = 300;
 	public float dmgPhysicalSlimeBoss = 3;
 	public float dmgRangeSlimeBoss = 1;
+
+	[Header("ScrubLord")]
+	public float hpScrubLord = 70;
+	public float dmgPhysicalScrubLord = 3;
+	public float dmgRangeScrubLord = 4;
 }
