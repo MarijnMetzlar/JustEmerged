@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 41d192ad887ff744b8a94775378b0b45
+timeCreated: 1453236036
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Backcrystal L
+    100002: Backcrystal M
+    100004: Backcrystal R
+    100006: Bicep L
+    100008: Bicep R
+    100010: Fist
+    100012: Head
+    100014: Legrock 01
+    100016: Legrock 02
+    100018: Legrock 03
+    100020: LowerArm R
+    100022: //RootNode
+    100024: SC L01
+    100026: SC L02
+    100028: SC R01
+    100030: SC R02
+    100032: ShC 01
+    100034: ShC 02
+    100036: ShC 03
+    100038: ShC 04
+    100040: Shield
+    100042: Shoulder L
+    100044: Shoulder R
+    400000: Backcrystal L
+    400002: Backcrystal M
+    400004: Backcrystal R
+    400006: Bicep L
+    400008: Bicep R
+    400010: Fist
+    400012: Head
+    400014: Legrock 01
+    400016: Legrock 02
+    400018: Legrock 03
+    400020: LowerArm R
+    400022: //RootNode
+    400024: SC L01
+    400026: SC L02
+    400028: SC R01
+    400030: SC R02
+    400032: ShC 01
+    400034: ShC 02
+    400036: ShC 03
+    400038: ShC 04
+    400040: Shield
+    400042: Shoulder L
+    400044: Shoulder R
+    2300000: Backcrystal L
+    2300002: Backcrystal M
+    2300004: Backcrystal R
+    2300006: Bicep L
+    2300008: Bicep R
+    2300010: Fist
+    2300012: Head
+    2300014: Legrock 01
+    2300016: Legrock 02
+    2300018: Legrock 03
+    2300020: LowerArm R
+    2300022: //RootNode
+    2300024: SC L01
+    2300026: SC L02
+    2300028: SC R01
+    2300030: SC R02
+    2300032: ShC 01
+    2300034: ShC 02
+    2300036: ShC 03
+    2300038: ShC 04
+    2300040: Shield
+    2300042: Shoulder L
+    2300044: Shoulder R
+    3300000: Backcrystal L
+    3300002: Backcrystal M
+    3300004: Backcrystal R
+    3300006: Bicep L
+    3300008: Bicep R
+    3300010: Fist
+    3300012: Head
+    3300014: Legrock 01
+    3300016: Legrock 02
+    3300018: Legrock 03
+    3300020: LowerArm R
+    3300022: //RootNode
+    3300024: SC L01
+    3300026: SC L02
+    3300028: SC R01
+    3300030: SC R02
+    3300032: ShC 01
+    3300034: ShC 02
+    3300036: ShC 03
+    3300038: ShC 04
+    3300040: Shield
+    3300042: Shoulder L
+    3300044: Shoulder R
+    4300000: Body
+    4300002: Head
+    4300004: Backcrystal M
+    4300006: Backcrystal L
+    4300008: Backcrystal R
+    4300010: Legrock 01
+    4300012: Legrock 02
+    4300014: Legrock 03
+    4300016: Shoulder R
+    4300018: Bicep R
+    4300020: LowerArm R
+    4300022: Fist
+    4300024: SC R01
+    4300026: SC R02
+    4300028: Shoulder L
+    4300030: SC L01
+    4300032: SC L02
+    4300034: Bicep L
+    4300036: Shield
+    4300038: ShC 04
+    4300040: ShC 03
+    4300042: ShC 02
+    4300044: ShC 01
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
