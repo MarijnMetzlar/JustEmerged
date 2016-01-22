@@ -87,7 +87,7 @@ public class CameraRotation : MonoBehaviour {
 
     void RotateWithoutMouse()
     {
-        float desiredAngle = targetObject.transform.eulerAngles.y;
+        float desiredAngle = targetObject.transform.localEulerAngles.y;
         Quaternion rotation = Quaternion.Euler(0, desiredAngle, 0);
         transform.position = targetObject.transform.position - (rotation * offset);
 

@@ -24,8 +24,7 @@ public class MoveCar : MonoBehaviour {
     private float turnWheelLeftorRight;
 
     [Header("Boosters")]
-    //public ParticleSystem BoosterL;
-    //public ParticleSystem BoosterR;
+    public ParticleSystem booster;
     public float maxBoost = 3;
     private float boosterSpeed;
     public float boosterMultiplier = 2;
@@ -61,15 +60,17 @@ public class MoveCar : MonoBehaviour {
     public GameObject RL;
     public GameObject RR;
 
+    public int damageMultiplier;
+    public int speedMultiplier;
+    public int accelerationMultiplier;
+    public int hpMultiplier;
+
+    public int upgradePoints;
+
     public bool getObjects = false;
 
     // Use this for initialization
     void Start() {
-        boosterSpeed = accelerationSpeed * boosterMultiplier;
-        boosterSpeedForward = speedForward * 2;
-        speedSaveForward = speedForward;
-        accelerationSaveSpeed = accelerationSpeed;
-        accelerationBooster = accelerationSpeed * 2;
         jumpTime = jumpStrength / 20;
         jumpSaveTime = jumpTime;
         rb = GetComponent<Rigidbody>();
@@ -78,11 +79,25 @@ public class MoveCar : MonoBehaviour {
 
     }
 
+    public void UpdateStats()
+    {
+        speedForward = speedForward + (speedMultiplier * 2);
+        speedBackward = speedBackward + (speedMultiplier * 2);
+        accelerationSpeed = accelerationSpeed + (accelerationMultiplier * 500);
+        gunDamage = gunDamage + damageMultiplier;
+        boosterSpeed = accelerationSpeed * boosterMultiplier;
+        boosterSpeedForward = speedForward * 2;
+        speedSaveForward = speedForward;
+        accelerationSaveSpeed = accelerationSpeed;
+        accelerationBooster = accelerationSpeed * 2;
+    }
+
     void FixedUpdate() {
         FL = GameObject.Find("WheelFL");
         FR = GameObject.Find("WheelFR");
         RL = GameObject.Find("WheelRL");
         RR = GameObject.Find("WheelRR");
+        booster = GameObject.Find("Booster").GetComponent<ParticleSystem>();
 
         TimeStuff();
         JumpUp();
@@ -112,14 +127,14 @@ public class MoveCar : MonoBehaviour {
 
     void JumpUp()
     {
-        if (Input.GetKey(KeyCode.Space) && jumpTime > 0)
+        if (Input.GetKey(KeyCode.B) && jumpTime > 0)
         {
             transform.Translate(Vector3.up * jumpStrength * Time.deltaTime);
 
             jumpTime = jumpTime - Time.deltaTime;
             jumpCountDown = 0;
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && jumpTime > 0)
+        else if (Input.GetKeyUp(KeyCode.B) && jumpTime > 0)
         {
             jumpTime = 0;
         }
@@ -181,8 +196,7 @@ public class MoveCar : MonoBehaviour {
         {
             speedForward = boosterSpeedForward;
             accelerationSpeed = boosterSpeed;
-            //BoosterL.Emit(500);
-            //BoosterR.Emit(500);
+            booster.enableEmission = true;
 
             boosterRemaining = boosterRemaining - Time.deltaTime;
             boosterTillRefill = 0;
@@ -191,7 +205,7 @@ public class MoveCar : MonoBehaviour {
         {
             accelerationSpeed = accelerationSaveSpeed;
             speedForward = speedSaveForward;
-
+            booster.enableEmission = false;
             if (boosterTillRefill >= boosterTime && boosterRemaining <= maxBoost)
             {
                 boosterRemaining = boosterRemaining + Time.deltaTime * boosterRefillTime;
@@ -233,6 +247,17 @@ public class MoveCar : MonoBehaviour {
             FL.GetComponent<CarWheels>().Move(0);
             FR.GetComponent<CarWheels>().Move(0);
         }
+
+        if (Input.GetKey(KeyCode.Space) == true)
+        {
+            FL.GetComponent<CarWheels>().Brake(accelerationSpeed * 9);
+            FR.GetComponent<CarWheels>().Brake(accelerationSpeed * 9);
+        }
+        else
+        {
+            FL.GetComponent<CarWheels>().Brake(0);
+            FR.GetComponent<CarWheels>().Brake(0);
+        }
         //Debug.Log(rb.velocity.magnitude);
     }
 
@@ -249,7 +274,7 @@ public class MoveCar : MonoBehaviour {
     {
         if (Vector3.Dot(transform.up, Vector3.down) > 0.5f && Input.GetKey(KeyCode.L))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 2, transform.position.z);
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);
             speedForward = speedSaveForward;
 

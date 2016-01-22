@@ -26,33 +26,19 @@ public class ChangeCanvas : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameObject imageC1 = GameObject.Find("Chassy Small UI");
-        GameObject imageC2 = GameObject.Find("Chassy Medium UI");
-        GameObject imageC3 = GameObject.Find("Chassy Large UI");
-        GameObject imageW1 = GameObject.Find("Wheel Type 1 UI");
-        GameObject imageW2 = GameObject.Find("Wheel Type 2 UI");
-        GameObject imageT1 = GameObject.Find("Turret Mini UI");
-        GameObject imageT2 = GameObject.Find("Turret Twin UI");
-        GameObject imageT3 = GameObject.Find("Turret Rail UI");
-        GameObject imageT4 = GameObject.Find("Turret Bazooka UI");
-        GameObject imageA1 = GameObject.Find("Ability Dash UI");
-        GameObject imageA2 = GameObject.Find("Ability Repair UI");
-        GameObject imageA3 = GameObject.Find("Ability Spring UI");
-        GameObject imageA4 = GameObject.Find("Ability Shield UI");
-
-        imageChassy1 = imageC1.GetComponent<Image>();
-        imageChassy2 = imageC2.GetComponent<Image>();
-        imageChassy3 = imageC3.GetComponent<Image>();
-        imageWheels1 = imageW1.GetComponent<Image>();
-        imageWheels2 = imageW2.GetComponent<Image>();
-        imageTurret1 = imageT1.GetComponent<Image>();
-        imageTurret2 = imageT2.GetComponent<Image>();
-        imageTurret3 = imageT3.GetComponent<Image>();
-        imageTurret4 = imageT3.GetComponent<Image>();
-        imageAbility1 = imageA1.GetComponent<Image>();
-        imageAbility2 = imageA2.GetComponent<Image>();
-        imageAbility3 = imageA3.GetComponent<Image>();
-        imageAbility4 = imageA4.GetComponent<Image>();
+        imageChassy1 = GameObject.Find("Chassy Small UI").GetComponent<Image>();
+        imageChassy2 = GameObject.Find("Chassy Medium UI").GetComponent<Image>();
+        imageChassy3 = GameObject.Find("Chassy Large UI").GetComponent<Image>();
+        imageWheels1 = GameObject.Find("Wheel Type 1 UI").GetComponent<Image>();
+        imageWheels2 = GameObject.Find("Wheel Type 2 UI").GetComponent<Image>();
+        imageTurret1 = GameObject.Find("Turret Mini UI").GetComponent<Image>();
+        imageTurret2 = GameObject.Find("Turret Twin UI").GetComponent<Image>();
+        imageTurret3 = GameObject.Find("Turret Rail UI").GetComponent<Image>();
+        imageTurret4 = GameObject.Find("Turret Bazooka UI").GetComponent<Image>();
+        imageAbility1 = GameObject.Find("Ability Dash UI").GetComponent<Image>();
+        imageAbility2 = GameObject.Find("Ability Repair UI").GetComponent<Image>();
+        imageAbility3 = GameObject.Find("Ability Spring UI").GetComponent<Image>();
+        imageAbility4 = GameObject.Find("Ability Shield UI").GetComponent<Image>();
 
         carHP = GameObject.Find("car").GetComponent<MoveCar>();
         halfMaxHealth = carHP.carHP;

@@ -12,10 +12,9 @@ public class MakingCar : MonoBehaviour
     public GameObject chassiPrefabLarge;
     public GameObject frontAxel;
     public GameObject rearAxel;
-    //public GameObject turretPrefabRail;
-    //public GameObject turretPrefabTwin;
-    //public GameObject turretPrefabMini;
-    //public GameObject turretPrefabBazooka;
+    public GameObject turretPrefabTwin;
+    public GameObject turretPrefabMini;
+    public GameObject boosterPrefab;
 
     private int Step = 0;
     public int chassyNumber = 0;
@@ -40,6 +39,7 @@ public class MakingCar : MonoBehaviour
     private GameObject canvasGame;
     private GameObject gameCrosshair;
     private GameObject eListener;
+    private MoveCar gunStats;
 
     private GameObject playerObjectNumber;
 
@@ -54,6 +54,7 @@ public class MakingCar : MonoBehaviour
         playerObjectNumber = GameObject.Find("Player object numbers");
         gameCrosshair = GameObject.Find("Crosshair");
         eListener = GameObject.Find("EventSystem");
+        gunStats = GameObject.Find("car").GetComponent<MoveCar>();
     }
 
     void ChangeCar()
@@ -107,6 +108,7 @@ public class MakingCar : MonoBehaviour
             newBody.transform.parent = transform;
             newBody.transform.localPosition = new Vector3(0f, 0f, 0f);
             newBody.transform.localEulerAngles = new Vector3(270, 0, 0);
+            this.GetComponent<MoveCar>().carHP = 20;
             Step += 1;
         }
         else if (Step == 1)
@@ -193,24 +195,22 @@ public class MakingCar : MonoBehaviour
         }
         else if (Step == 3)
         {
-            if (boosterType == 0)
-            {
-                Step += 1;
-            }
-            else if (boosterType == 1)
-            {
-                Step += 1;
-            }
+            GameObject newBody = Instantiate(boosterPrefab);
+            newBody.name = "Booster";
+            newBody.transform.parent = transform;
+            newBody.transform.localPosition = new Vector3(0, -0.215f, -1.2f);
+            Step += 1;
         }
         else if (Step == 4)
         {
-            /*if (turretType == 0)
+            if (turretType == 0)
             {
                 GameObject newBody = Instantiate(turretPrefabMini);
                 newBody.name = "Turret";
                 newBody.transform.parent = transform;
-                newBody.transform.localPosition = new Vector3(0.872f, 0.201f, 0f);
-                newBody.transform.localEulerAngles = new Vector3(0, 90, 0);
+                newBody.transform.localPosition = new Vector3(0, 0.256f, -0.822f);
+                newBody.transform.localEulerAngles = new Vector3(0, 180, 0);
+                this.GetComponent<MoveCar>().gunDamage = 2;
                 Step += 1;
             }
             else if (turretType == 1)
@@ -218,19 +218,11 @@ public class MakingCar : MonoBehaviour
                 GameObject newBody = Instantiate(turretPrefabTwin);
                 newBody.name = "Turret";
                 newBody.transform.parent = transform;
-                newBody.transform.localPosition = new Vector3(0.104f, 0.247f, 0f);
-                newBody.transform.localEulerAngles = new Vector3(0, 90, 0);
+                newBody.transform.localPosition = new Vector3(0, 0.25f, -0.881f);
+                newBody.transform.localEulerAngles = new Vector3(0, 180, 0);
+                this.GetComponent<MoveCar>().gunDamage = 3;
                 Step += 1;
             }
-            else if (turretType == 2)
-            {
-                Step += 1;
-            }
-            else if (turretType == 3)
-            {
-                Step += 1;
-            }*/
-            Step += 1;
         }
         else
         {
@@ -246,6 +238,7 @@ public class MakingCar : MonoBehaviour
             newBody.transform.parent = transform;
             newBody.transform.localPosition = new Vector3(0f, 0f, 0f);
             newBody.transform.localEulerAngles = new Vector3(270, 0, 0);
+            this.GetComponent<MoveCar>().carHP = 22;
             Step += 1;
         }
         else if (Step == 1)
@@ -332,24 +325,22 @@ public class MakingCar : MonoBehaviour
         }
         else if (Step == 3)
         {
-            if (boosterType == 0)
-            {
-                Step += 1;
-            }
-            else if (boosterType == 1)
-            {
-                Step += 1;
-            }
+            GameObject newBody = Instantiate(boosterPrefab);
+            newBody.name = "Booster";
+            newBody.transform.parent = transform;
+            newBody.transform.localPosition = new Vector3(0, -0.215f, -1.2f);
+            Step += 1;
         }
         else if (Step == 4)
         {
-            /*if (turretType == 0)
+            if (turretType == 0)
             {
                 GameObject newBody = Instantiate(turretPrefabMini);
                 newBody.name = "Turret";
                 newBody.transform.parent = transform;
-                newBody.transform.localPosition = new Vector3(0.872f, 0.201f, 0f);
-                newBody.transform.localEulerAngles = new Vector3(0, 90, 0);
+                newBody.transform.localPosition = new Vector3(0, 0.256f, -0.822f);
+                newBody.transform.localEulerAngles = new Vector3(0, 180, 0);
+                this.GetComponent<MoveCar>().gunDamage = 2;
                 Step += 1;
             }
             else if (turretType == 1)
@@ -357,18 +348,11 @@ public class MakingCar : MonoBehaviour
                 GameObject newBody = Instantiate(turretPrefabTwin);
                 newBody.name = "Turret";
                 newBody.transform.parent = transform;
-                newBody.transform.localPosition = new Vector3(0.104f, 0.247f, 0f);
-                newBody.transform.localEulerAngles = new Vector3(0, 90, 0);
+                newBody.transform.localPosition = new Vector3(0, 0.25f, -0.881f);
+                newBody.transform.localEulerAngles = new Vector3(0, 180, 0);
+                this.GetComponent<MoveCar>().gunDamage = 3;
                 Step += 1;
             }
-            else if (turretType == 2)
-            {
-                Step += 1;
-            }
-            else if (turretType == 3)
-            {
-                Step += 1;
-            }*/Step += 1;
         }
         else
         {
@@ -384,6 +368,7 @@ public class MakingCar : MonoBehaviour
             newBody.transform.parent = transform;
             newBody.transform.localPosition = new Vector3(0, 0, 0);
             newBody.transform.localEulerAngles = new Vector3(270, 0, 0);
+            this.GetComponent<MoveCar>().carHP = 24;
             Step += 1;
         }
         else if (Step == 1)
@@ -470,24 +455,22 @@ public class MakingCar : MonoBehaviour
         }
         else if (Step == 3)
         {
-            if (boosterType == 0)
-            {
-                Step += 1;
-            }
-            else if (boosterType == 1)
-            {
-                Step += 1;
-            }
+            GameObject newBody = Instantiate(boosterPrefab);
+            newBody.name = "Booster";
+            newBody.transform.parent = transform;
+            newBody.transform.localPosition = new Vector3(0, -0.215f, -1.2f);
+            Step += 1;
         }
         else if (Step == 4)
         {
-            /*if(turretType == 0)
+            if(turretType == 0)
             {
                 GameObject newBody = Instantiate(turretPrefabMini);
                 newBody.name = "Turret";
                 newBody.transform.parent = transform;
-                newBody.transform.localPosition = new Vector3(0.872f, 0.201f, 0f);
-                newBody.transform.localEulerAngles = new Vector3(0, 90, 0);
+                newBody.transform.localPosition = new Vector3(0, 0.256f, -0.822f);
+                newBody.transform.localEulerAngles = new Vector3(0, 180, 0);
+                this.GetComponent<MoveCar>().gunDamage = 2;
                 Step += 1;
             }
             else if (turretType == 1)
@@ -495,19 +478,11 @@ public class MakingCar : MonoBehaviour
                 GameObject newBody = Instantiate(turretPrefabTwin);
                 newBody.name = "Turret";
                 newBody.transform.parent = transform;
-                newBody.transform.localPosition = new Vector3(0.104f, 0.247f, 0f);
-                newBody.transform.localEulerAngles = new Vector3(0, 90, 0);
+                newBody.transform.localPosition = new Vector3(0, 0.25f, -0.881f);
+                newBody.transform.localEulerAngles = new Vector3(0, 180, 0);
+                this.GetComponent<MoveCar>().gunDamage = 3;
                 Step += 1;
             }
-            else if (turretType == 2)
-            {
-                Step += 1;
-            }
-            else if (turretType == 3)
-            {
-                Step += 1;
-            }*/
-            Step += 1;
         }
         else
         {
@@ -542,7 +517,7 @@ public class MakingCar : MonoBehaviour
     {
         turretType = turretType + 1;
         playerObjectNumber.GetComponent<PlayerObjects>().turret = playerObjectNumber.GetComponent<PlayerObjects>().turret + 1;
-        if (turretType == 4)
+        if (turretType == 2)
         {
             turretType = 0;
             playerObjectNumber.GetComponent<PlayerObjects>().turret = 0;
@@ -551,7 +526,7 @@ public class MakingCar : MonoBehaviour
 
     public void LeaveGarage()
     {
-        carPos = new Vector3(1550f, 40.61f, 1465f);
+		carPos = new Vector3(1550f, 41.61f, 1465f);
         transform.position = carPos;
         garageEnterLeaving = 1;
         transform.eulerAngles = new Vector3(0,90,0);
@@ -563,13 +538,14 @@ public class MakingCar : MonoBehaviour
         canvasGame.GetComponent<Canvas>().enabled = true;
         carCamera.GetComponent<CameraRotation>().inGarage = false;
         this.GetComponent<MoveCar>().enabled = true;
+        this.GetComponent<MoveCar>().UpdateStats();
     }
 
     void EnterGarage()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.P))
         {
-			carPos = new Vector3(1530f, 40.61f, 1465f);
+			carPos = new Vector3(1530f, 41.61f, 1465f);
             transform.position = carPos;
             transform.eulerAngles = new Vector3(0,0,0);
             garageEnterLeaving = 0;
@@ -611,7 +587,7 @@ public class MakingCar : MonoBehaviour
 
         if (garageEnterLeaving == 0)
         {
-            this.transform.position = new Vector3(1530f, 40.61f, 1465f);
+            this.transform.position = new Vector3(1530f, 41.61f, 1465f);
             this.transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
