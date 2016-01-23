@@ -14,6 +14,10 @@ public class RotateGunsMini : MonoBehaviour {
 
     private GameObject Bullets;
 
+	private int shootSound = 0;
+	public AudioSource miniGun;
+	public AudioSource miniGun2;
+
     // Use this for initialization
     void Start()
     {
@@ -49,7 +53,21 @@ public class RotateGunsMini : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Bullets.GetComponent<ParticleSystem>().Emit(100);
+                if(shootSound == 0)
+				{
+					shootSound += 1;
+					//sound!
+					miniGun.Play();
+				}
+				else if(shootSound == 1)
+				{
+					shootSound -= 1;
+					//sound!
+					miniGun2.Play();
+				}
+
+
+				Bullets.GetComponent<ParticleSystem>().Emit(100);
             }
         }
     }

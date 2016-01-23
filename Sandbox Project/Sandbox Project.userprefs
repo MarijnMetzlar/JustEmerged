@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\MoveCar.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\RotateGunsTwin.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\SnakeEnemy.cs" Line="29" Column="1" />
-      <File FileName="Assets\Scripts\Player\MakingCar.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\MoveCar.cs" Line="288" Column="1" />
+      <File FileName="Assets\Scripts\Player\RotateGunsMini.cs" Line="19" Column="30" />
+      <File FileName="Assets\Scripts\Player\RotateGunsTwin.cs" Line="59" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

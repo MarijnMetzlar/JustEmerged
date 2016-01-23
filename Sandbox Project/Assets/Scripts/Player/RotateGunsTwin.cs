@@ -15,6 +15,11 @@ public class RotateGunsTwin : MonoBehaviour {
     private ParticleSystem BulletsL;
     private ParticleSystem BulletsR;
 
+	private int shootSound = 0;
+	public AudioSource twinGun;
+	public AudioSource twinGun2;
+	public AudioSource twinGun3;
+
     // Use this for initialization
     void Start()
     {
@@ -50,6 +55,26 @@ public class RotateGunsTwin : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+				if(shootSound == 0)
+				{
+					shootSound += 1;
+					//sound!
+					twinGun.Play();
+				}
+				else if(shootSound == 1)
+				{
+					shootSound += 1;
+					//sound!
+					twinGun2.Play();
+				}
+
+				else if(shootSound == 2)
+				{
+					shootSound -= 2;
+					//sound!
+					twinGun3.Play();
+				}
+
                 BulletsL.Emit(100);
                 BulletsR.Emit(100);
             }
