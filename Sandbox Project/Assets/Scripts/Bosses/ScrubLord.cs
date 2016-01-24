@@ -96,7 +96,7 @@ public class ScrubLord : MonoBehaviour {
 		
 		if (miniBossType == 0) 
 		{
-			if (gameObject.transform.position.z > (obeliskPosition.z - 150.0f) && Dir1 == false) 
+			if (gameObject.transform.position.z > (obeliskPosition.z - 160.0f) && Dir1 == false) 
 			{
 				Dir1 = true;
 				//Debug.Log("Turn now 90");
@@ -104,21 +104,21 @@ public class ScrubLord : MonoBehaviour {
 				Dir3 = false;
 			}
 		
-			if (gameObject.transform.position.x > (obeliskPosition.x - 170.0f) && Dir2 == false) 
+			if (gameObject.transform.position.x > (obeliskPosition.x - 181.0f) && Dir2 == false) 
 			{
 				Dir2 = true;
 				//Debug.Log("Turn now 180");
 				gameObject.transform.eulerAngles = new Vector3 (0, 180, 0);
 				Dir4 = false;
 			} 
-			else if (gameObject.transform.position.z < (obeliskPosition.z - 190.0f) && Dir3 == false) 
+			else if (gameObject.transform.position.z < (obeliskPosition.z - 210.0f) && Dir3 == false) 
 			{
 				Dir3 = true;
 				//Debug.Log("Turn now 270");
 				gameObject.transform.eulerAngles = new Vector3 (0, 270, 0);
 				Dir1 = false;
 			} 
-			else if (gameObject.transform.position.x < (obeliskPosition.x - 213.0f) && Dir4 == false) 
+			else if (gameObject.transform.position.x < (obeliskPosition.x - 240.0f) && Dir4 == false) 
 			{
 				Dir4 = true;
 				//Debug.Log("Turn now 0");
@@ -129,28 +129,28 @@ public class ScrubLord : MonoBehaviour {
 
 		if (miniBossType == 1) 
 		{
-			if (gameObject.transform.position.z > (obeliskPosition.z - 297.0f) && Dir1 == false) 
+			if (gameObject.transform.position.z > (obeliskPosition.z - 283.0f) && Dir1 == false) 
 			{
 				Dir1 = true;
 				//Debug.Log("Turn now 90");
 				gameObject.transform.eulerAngles = new Vector3 (0, 90, 0);
 				Dir3 = false;
 			}
-			if (gameObject.transform.position.x > (obeliskPosition.x + 25.0f) && Dir2 == false) 
+			if (gameObject.transform.position.x > (obeliskPosition.x + 42.0f) && Dir2 == false) 
 			{
 				Dir2 = true;
 				//Debug.Log("Turn now 180");
 				gameObject.transform.eulerAngles = new Vector3 (0, 180, 0);
 				Dir4 = false;
 			} 
-			else if (gameObject.transform.position.z < (obeliskPosition.z - 332.0f) && Dir3 == false) 
+			else if (gameObject.transform.position.z < (obeliskPosition.z - 344.0f) && Dir3 == false) 
 			{
 				Dir3 = true;
 				//Debug.Log("Turn now 270");
 				gameObject.transform.eulerAngles = new Vector3 (0, 270, 0);
 				Dir1 = false;
 			} 
-			else if (gameObject.transform.position.x < (obeliskPosition.x - 16.0f) && Dir4 == false) 
+			else if (gameObject.transform.position.x < (obeliskPosition.x - 27.0f) && Dir4 == false) 
 			{
 				Dir4 = true;
 				//Debug.Log("Turn now 0");
@@ -161,28 +161,28 @@ public class ScrubLord : MonoBehaviour {
 
 		if (miniBossType == 2) 
 		{
-			if (gameObject.transform.position.z > (obeliskPosition.z + 249.0f) && Dir1 == false) 
+			if (gameObject.transform.position.z > (obeliskPosition.z + 258.0f) && Dir1 == false) 
 			{
 				Dir1 = true;
 				//Debug.Log("Turn now 90");
 				gameObject.transform.eulerAngles = new Vector3 (0, 90, 0);
 				Dir3 = false;
 			}
-			if (gameObject.transform.position.x > (obeliskPosition.x - 217.0f) && Dir2 == false) 
+			if (gameObject.transform.position.x > (obeliskPosition.x - 196.0f) && Dir2 == false) 
 			{
 				Dir2 = true;
 				//Debug.Log("Turn now 180");
 				gameObject.transform.eulerAngles = new Vector3 (0, 180, 0);
 				Dir4 = false;
 			} 
-			else if (gameObject.transform.position.z < (obeliskPosition.z + 215.0f) && Dir3 == false) 
+			else if (gameObject.transform.position.z < (obeliskPosition.z + 206.0f) && Dir3 == false) 
 			{
 				Dir3 = true;
 				//Debug.Log("Turn now 270");
 				gameObject.transform.eulerAngles = new Vector3 (0, 270, 0);
 				Dir1 = false;
 			} 
-			else if (gameObject.transform.position.x < (obeliskPosition.x - 256.0f) && Dir4 == false) 
+			else if (gameObject.transform.position.x < (obeliskPosition.x - 260.0f) && Dir4 == false) 
 			{
 				Dir4 = true;
 				//Debug.Log("Turn now 0");

@@ -543,22 +543,27 @@ public class MakingCar : MonoBehaviour
 
     void EnterGarage()
     {
-        if (Input.GetKey (KeyCode.P)) 
-		{
-			carPos = new Vector3 (1530f, 41.61f, 1465f);
-			transform.position = carPos;
-			transform.eulerAngles = new Vector3 (0, 0, 0);
-			garageEnterLeaving = 0;
-			mainCamera.GetComponent<Camera> ().enabled = true;
-			eListener.SetActive (true);
-			carCamera.GetComponent<Camera> ().enabled = false;
-			canvasGarage.GetComponent<Canvas> ().enabled = true;
-			canvasGame.GetComponent<Canvas> ().enabled = false;
-			carCamera.GetComponent<CameraRotation> ().inGarage = true;
-			this.GetComponent<MoveCar> ().rb.velocity = Vector3.zero;
-			this.GetComponent<MoveCar> ().enabled = false;
-		}
+		carPos = new Vector3 (1530f, 41.61f, 1465f);
+		transform.position = carPos;
+		transform.eulerAngles = new Vector3 (0, 0, 0);
+		garageEnterLeaving = 0;
+		mainCamera.GetComponent<Camera> ().enabled = true;
+		eListener.SetActive (true);
+		carCamera.GetComponent<Camera> ().enabled = false;
+		canvasGarage.GetComponent<Canvas> ().enabled = true;
+		canvasGame.GetComponent<Canvas> ().enabled = false;
+		carCamera.GetComponent<CameraRotation> ().inGarage = true;
+		this.GetComponent<MoveCar> ().rb.velocity = Vector3.zero;
+		this.GetComponent<MoveCar> ().enabled = false;
     }
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "GarageEntering") 
+		{
+			EnterGarage();
+		}
+	}
 
     // Update is called once per frame
     void Update()
@@ -581,8 +586,6 @@ public class MakingCar : MonoBehaviour
             ChangeCar();
             upgrades = 0;
         }
-
-        EnterGarage();
 
         if (garageEnterLeaving == 0)
         {
