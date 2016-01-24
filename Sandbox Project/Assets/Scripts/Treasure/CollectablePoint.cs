@@ -4,10 +4,12 @@ using System.Collections;
 public class CollectablePoint : MonoBehaviour {
 
 	private float poof = 250.0f;
+	public MoveCar car;
 
 	void Start ()
 	{
 		gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.up * poof);
+		car = GameObject.Find ("car").GetComponent<MoveCar>();
 	}
 
 	// Update is called once per frame
@@ -29,6 +31,6 @@ public class CollectablePoint : MonoBehaviour {
 	void OnTriggerEnter ()
 	{
 		Destroy (gameObject);
-		//GIVE POINTS TO CAR!!!!
+		car.upgradePoints += 1;
 	}
 }

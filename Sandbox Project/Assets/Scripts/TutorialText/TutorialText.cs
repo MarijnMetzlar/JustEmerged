@@ -67,7 +67,7 @@ public class TutorialText : MonoBehaviour {
 			{
 				if(Input.GetMouseButtonDown(0))
 				{
-					txt.text = "By pressing the spacebar you can do a short jump";
+					txt.text = "By pressing B you can do a short jump";
 					textOrder += 1;
 				}
 				changeTextTimer = 0.0f;
@@ -75,7 +75,7 @@ public class TutorialText : MonoBehaviour {
 
 			else if(textOrder == 6)
 			{
-				if(Input.GetKeyDown(KeyCode.Space))
+				if(Input.GetKeyDown(KeyCode.B))
 				{
 					txt.text = "You can make a strafe dash by pressing Q,E";
 					textOrder += 1;
