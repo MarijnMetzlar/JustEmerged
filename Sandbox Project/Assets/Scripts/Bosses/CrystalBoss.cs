@@ -17,6 +17,8 @@ public class CrystalBoss : MonoBehaviour {
 
 	public Transform spikePrefab;
 
+	private float throwTimer = 5.0f;
+
 	private int soundEffect;
 	public AudioSource evilLaugh;
 
@@ -36,6 +38,7 @@ public class CrystalBoss : MonoBehaviour {
 		{
 			LookAtPlayer ();
 			WalkingPattern ();
+			Attack ();
 		}
 	}
 
@@ -47,8 +50,38 @@ public class CrystalBoss : MonoBehaviour {
 
 	void WalkingPattern ()
 	{
-		pointA = new Vector3 (182.8f, 60.11f, 203.38f);
-		pointB = new Vector3 (102.1f, 60.11f, 318.28f);
-		transform.position = Vector3.Lerp (pointA, pointB);
+		//ok
+	}
+
+	void Attack ()
+	{
+		throwTimer -= Time.deltaTime;
+		if (throwTimer < 2.0f) 
+		{
+			soundEffect += 1;
+			//play animation I guess
+			enemyMovementSpeed = 0;
+		}
+		
+		if (soundEffect == 1) 
+		{
+			evilLaugh.Play();
+		}
+		
+		if (throwTimer < 0) 
+		{
+			ThrowSpike ();
+			throwTimer = 5.0f;
+			enemyMovementSpeed = 10;
+			soundEffect = 0;
+		}
+	}
+
+	void ThrowSpike ()
+	{
+		Vector3 enemyPosition = transform.position + (transform.forward * spawnDistance) + (transform.up * enemyHeight);
+		Instantiate(spikePrefab, new Vector3(enemyPosition.x + 5.0f, enemyPosition.y, enemyPosition.z), transform.rotation);
+		Instantiate(spikePrefab, new Vector3(enemyPosition.x, enemyPosition.y, enemyPosition.z), transform.rotation);
+		Instantiate(spikePrefab, new Vector3(enemyPosition.x - 5.0f, enemyPosition.y, enemyPosition.z), transform.rotation);
 	}
 }
