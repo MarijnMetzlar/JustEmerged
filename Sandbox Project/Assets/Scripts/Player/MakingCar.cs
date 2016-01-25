@@ -43,6 +43,10 @@ public class MakingCar : MonoBehaviour
 
     private GameObject playerObjectNumber;
 
+	public AudioSource garageSound;
+	public AudioSource worldSound;
+	private bool _garageSound = false;
+
     // Use this for initialization
     void Start()
     {
@@ -539,6 +543,9 @@ public class MakingCar : MonoBehaviour
         carCamera.GetComponent<CameraRotation>().inGarage = false;
         this.GetComponent<MoveCar>().enabled = true;
         this.GetComponent<MoveCar>().UpdateStats();
+		garageSound.Stop();
+		worldSound.Play ();
+		_garageSound = false;
     }
 
     void EnterGarage()
@@ -562,6 +569,9 @@ public class MakingCar : MonoBehaviour
 		if (other.tag == "GarageEntering") 
 		{
 			EnterGarage();
+			garageSound.Play();
+			GameObject.Find("car").GetComponent<MoveCar>().engine.Stop();
+			GameObject.Find("car").GetComponent<MoveCar>().idle.Stop();
 		}
 	}
 
@@ -589,8 +599,13 @@ public class MakingCar : MonoBehaviour
 
         if (garageEnterLeaving == 0)
         {
-            this.transform.position = new Vector3(1530f, 41.61f, 1465f);
+            this.transform.position = new Vector3(1530f, 40.61f, 1465f);
             this.transform.eulerAngles = new Vector3(0, 0, 0);
+			if(_garageSound == false)
+			{
+				_garageSound = true;
+				garageSound.Play();
+			}
         }
     }
 }

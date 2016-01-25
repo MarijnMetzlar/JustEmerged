@@ -23,7 +23,16 @@ public class ScrubLord : MonoBehaviour {
 	public int miniBossType;
 
 	public Transform spikePrefab;
-	
+
+	private int soundEffect;
+	public AudioSource evilLaugh;
+
+	void Start ()
+	{
+		GameObject _Spike = GameObject.FindGameObjectWithTag ("Spike");
+		Physics.IgnoreCollision(_Spike.GetComponent<Collider>(), GetComponent<Collider>());
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
@@ -72,10 +81,16 @@ public class ScrubLord : MonoBehaviour {
 
 		
 		throwTimer -= Time.deltaTime;
-		if (throwTimer < 1.5f) 
+		if (throwTimer < 2.0f) 
 		{
+			soundEffect += 1;
 			//play animation I guess
 			enemyMovementSpeed = 0;
+		}
+
+		if (soundEffect == 1) 
+		{
+			evilLaugh.Play();
 		}
 		
 		if (throwTimer < 0) 
@@ -83,9 +98,10 @@ public class ScrubLord : MonoBehaviour {
 			ThrowSpike ();
 			throwTimer = 10.0f;
 			enemyMovementSpeed = 10;
+			soundEffect = 0;
 		}
 	}
-	
+
 	void ThrowSpike ()
 	{
 		Vector3 enemyPosition = transform.position + (transform.forward * spawnDistance) + (transform.up * enemyHeight);

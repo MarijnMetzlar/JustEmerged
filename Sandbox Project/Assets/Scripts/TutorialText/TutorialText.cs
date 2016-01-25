@@ -16,6 +16,8 @@ public class TutorialText : MonoBehaviour {
 	public AudioSource nitro;
 	public AudioSource flip;
 	public AudioSource hull;
+
+	public AudioSource gameMusic;
 	
 	// Use this for initialization
 	void Start () 
@@ -117,5 +119,7 @@ public class TutorialText : MonoBehaviour {
 		flip.Stop ();
 		hull.Stop ();
 		txt.text = null;
+
+
 	}
 }

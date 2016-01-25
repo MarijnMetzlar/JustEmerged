@@ -71,6 +71,12 @@ public class MoveCar : MonoBehaviour {
 
 	public AudioSource meepSound;
 	public AudioSource boosterSound;
+	public AudioSource boosterSound2;
+	public AudioSource boosterSound3;
+	public AudioSource engine;
+	public AudioSource idle;
+	private int boosterSoundRandom = 0;
+	private bool riding = false;
 
     // Use this for initialization
     void Start() {
@@ -209,7 +215,11 @@ public class MoveCar : MonoBehaviour {
 
         else
         {
-            accelerationSpeed = accelerationSaveSpeed;
+			boosterSound.Stop();
+			boosterSound2.Stop();
+			boosterSound3.Stop();
+
+			accelerationSpeed = accelerationSaveSpeed;
             speedForward = speedSaveForward;
             booster.enableEmission = false;
             if (boosterTillRefill >= boosterTime && boosterRemaining <= maxBoost)
@@ -224,6 +234,13 @@ public class MoveCar : MonoBehaviour {
         float torque = Input.GetAxis("Vertical") * accelerationSpeed;
         if (Input.GetKey(KeyCode.W) == true)
         {
+			if(riding == false)
+			{
+				engine.Play ();
+				idle.Stop ();
+				riding = true;
+			}
+
             if (rb.velocity.magnitude <= speedForward)
             {
                 FL.GetComponent<CarWheels>().Move(torque);
@@ -250,6 +267,13 @@ public class MoveCar : MonoBehaviour {
         }
         else
         {
+			if(riding == true)
+			{
+				engine.Stop ();
+				idle.Play ();
+				riding = false;
+			}
+
             FL.GetComponent<CarWheels>().Move(0);
             FR.GetComponent<CarWheels>().Move(0);
         }
@@ -300,12 +324,26 @@ public class MoveCar : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.LeftShift) && boosterRemaining > 0) 
 		{
-			boosterSound.Play ();
+			if(boosterSoundRandom == 0)
+			{
+				boosterSoundRandom = 1;
+				boosterSound.Play ();
+				boosterSound2.Play ();
+			}
+
+			else if(boosterSoundRandom == 1)
+			{
+				boosterSoundRandom = 0;
+				boosterSound.Play ();
+				boosterSound3.Play ();
+			}
 		}
 		
 		if (Input.GetKeyUp (KeyCode.LeftShift)) 
 		{
 			boosterSound.Stop();
+			boosterSound2.Stop();
+			boosterSound3.Stop();
 		}
 	}
 }
