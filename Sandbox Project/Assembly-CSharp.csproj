@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\AlienForestCrystals\RemoveCrystals.cs" />
      <Compile Include="Assets\Scripts\Bosses\AncientTreeBoss.cs" />
      <Compile Include="Assets\Scripts\Bosses\Blob.cs" />
+     <Compile Include="Assets\Scripts\Bosses\CrystalBoss.cs" />
      <Compile Include="Assets\Scripts\Bosses\LavaBoss.cs" />
      <Compile Include="Assets\Scripts\Bosses\MiniSlime.cs" />
      <Compile Include="Assets\Scripts\Bosses\PoolOfDeath.cs" />
