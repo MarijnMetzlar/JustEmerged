@@ -201,6 +201,7 @@ public class MoveCar : MonoBehaviour {
 			speedForward = boosterSpeedForward;
 			accelerationSpeed = boosterSpeed;
 			booster.enableEmission = true;
+			rb.AddRelativeForce(Vector3.forward * 10000);
 
 			boosterRemaining = boosterRemaining - Time.deltaTime;
 			boosterTillRefill = 0;
