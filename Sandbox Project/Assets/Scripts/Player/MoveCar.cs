@@ -70,6 +70,7 @@ public class MoveCar : MonoBehaviour {
     public bool getObjects = false;
 
 	public AudioSource meepSound;
+	public AudioSource boosterSound;
 
     // Use this for initialization
     void Start() {
@@ -108,7 +109,7 @@ public class MoveCar : MonoBehaviour {
         MovementFwBw();
         MovementLeRi();
         FlipCar();
-		MiepMiep ();
+		Sounds ();
         
         turning = turning + 1;
         if (turning >= 360)
@@ -195,15 +196,15 @@ public class MoveCar : MonoBehaviour {
     {
         //Debug.Log("booster remaining + " + boosterRemaining);
         //Debug.Log("booster till refill + " + boosterTillRefill);
-        if (Input.GetKey(KeyCode.LeftShift) && boosterRemaining > 0)
-        {
+        if (Input.GetKey (KeyCode.LeftShift) && boosterRemaining > 0) 
+		{
 			speedForward = boosterSpeedForward;
-            accelerationSpeed = boosterSpeed;
-            booster.enableEmission = true;
+			accelerationSpeed = boosterSpeed;
+			booster.enableEmission = true;
 
-            boosterRemaining = boosterRemaining - Time.deltaTime;
-            boosterTillRefill = 0;
-        }
+			boosterRemaining = boosterRemaining - Time.deltaTime;
+			boosterTillRefill = 0;
+		}
 
         else
         {
@@ -289,11 +290,21 @@ public class MoveCar : MonoBehaviour {
         }
     }
 
-	void MiepMiep()
+	void Sounds()
 	{
 		if(Input.GetKeyDown(KeyCode.R))
 		{
 			meepSound.Play ();
+		}
+
+		if (Input.GetKeyDown (KeyCode.LeftShift) && boosterRemaining > 0) 
+		{
+			boosterSound.Play ();
+		}
+		
+		if (Input.GetKeyUp (KeyCode.LeftShift)) 
+		{
+			boosterSound.Stop();
 		}
 	}
 }
