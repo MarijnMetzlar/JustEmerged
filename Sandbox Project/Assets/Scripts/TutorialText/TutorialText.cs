@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -21,7 +21,7 @@ public class TutorialText : MonoBehaviour {
 	void Start () 
 	{
 		txt = gameObject.GetComponent<Text> ();
-		txt.text = "Welcome, this is your garage! Switch & upgrade your items here by clicking";
+		txt.text = "This is your Hangar, use the [+] and [-] to spend Upgrade points, press the buttons to change vehicle equipent and deploy.";
 		welcome.Play();
 	}
 	
@@ -33,28 +33,28 @@ public class TutorialText : MonoBehaviour {
 		if (welcome.time > 24.1f) 
 		{
 			welcome.Stop ();
-			txt.text = "You can drive your car by using: W,A,S,D";
+			txt.text = "Use [W,A,S,D] to Control your vehicle. Use [R] to Honk";
 			steering.Play ();
 		}
 
 		if (steering.time > 19.95f) 
 		{
 			steering.Stop ();
-			txt.text = "Click your right mouse button to enter or exit gimbal mode";
+			txt.text = "Use [Right Mouse Button] to enter and exit gimble mode";
 			gimble.Play ();
 		}
 
 		if (gimble.time > 21.45f) 
 		{
 			gimble.Stop ();
-			txt.text = "In gimbal mode you can shoot with your left mouse button";
+			txt.text = "Use [Left Mouse Button] to Shoot while in gimble mode";
 			shooting.Play ();
 		}
 
 		if (shooting.time > 37.20f) 
 		{
 			shooting.Stop ();
-			txt.text = "By pressing B you can do a short jump";
+			txt.text = "Press [B] to jump";
 			jumping.Play ();
 		}
 
@@ -68,21 +68,21 @@ public class TutorialText : MonoBehaviour {
 		if (strafing.time > 16.70f) 
 		{
 			strafing.Stop ();
-			txt.text = "Pressing shift will activate your nitro";
+			txt.text = "Use [Shift] to activate Ion Engines";
 			nitro.Play ();
 		}
 
 		if (nitro.time > 20.40f) 
 		{
 			nitro.Stop ();
-			txt.text = "If you are flipped, then you can turn around by pressing L";
+			txt.text = "Press [L]";
 			flip.Play ();
 		}
 
 		if (flip.time > 22.20f) 
 		{
 			flip.Stop ();
-			txt.text = "JA OK";
+			txt.text = "<< Damage Indicator <<";
 			hull.Play ();
 		}
 
@@ -100,7 +100,7 @@ public class TutorialText : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.RightShift))
 		{
-			txt.text = "You can drive your car by using: W,A,S,D";
+			txt.text = "Use [W,A,S,D] to Control your vehicle.";
 			steering.Play ();
 		}
 	}
