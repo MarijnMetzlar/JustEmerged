@@ -45,8 +45,19 @@ public class HittingPlayer : MonoBehaviour {
 
 		if (other.gameObject.tag == "PoolOfDeath") 
 		{
-			Debug.Log("OUCH");
 			healthPoints = healthPoints - 0.5f;
+		}
+
+		if (other.gameObject.tag == "Spike") 
+		{
+			healthPoints = healthPoints - 5;
+			Destroy(other.gameObject);
+		}
+
+		if (other.gameObject.tag == "ScrubLord") 
+		{
+			Debug.Log("ja ok");
+			healthPoints = healthPoints - 2;
 		}
 	}
 

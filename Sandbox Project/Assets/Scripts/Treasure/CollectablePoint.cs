@@ -28,9 +28,12 @@ public class CollectablePoint : MonoBehaviour {
 		gameObject.GetComponent<Transform> ().Rotate (Vector3.right + Vector3.up * 5);
 	}
 
-	void OnTriggerEnter ()
+	void OnTriggerEnter (Collider other)
 	{
-		Destroy (gameObject);
-		car.upgradePoints += 1;
+		if (other.gameObject.tag == "Player") 
+		{
+			Destroy (gameObject);
+			car.upgradePoints += 1;
+		}
 	}
 }

@@ -22,7 +22,7 @@ public class RemoveCrystals : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (HittingEnemies.MiniBossKills <= 0) 
+		if (HittingEnemies.MiniBossKills == 0) 
 		{
 			gameObject.GetComponent<Transform>().position -= new Vector3 (0, 0.05f, 0);
 		}

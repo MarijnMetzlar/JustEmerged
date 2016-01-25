@@ -13,7 +13,7 @@ public class Treasure : MonoBehaviour {
 		if (other.gameObject.tag == "Player") 
 		{
 			Destroy(gameObject);
-			Instantiate(collectablePoint, new Vector3 (thisChest.x, thisChest.y + 1.0f, thisChest.z), Quaternion.identity);
+			Instantiate(collectablePoint, new Vector3 (thisChest.x, thisChest.y + 1.5f, thisChest.z), Quaternion.identity);
 		}
 	}
 }

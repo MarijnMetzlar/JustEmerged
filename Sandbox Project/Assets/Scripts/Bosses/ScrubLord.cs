@@ -7,12 +7,13 @@ public class ScrubLord : MonoBehaviour {
 	public float enemyLookDistance;
 	public float attackDistance;
 	public float damping;
-	private float enemyMovementSpeed = 10.0f;
+	private float enemyMovementSpeed = 17.5f;
 	
 	public float spawnDistance;
 	public float enemyHeight;
 	
-	public float throwTimer = 10.0f;
+	private float throwTimer = 10.0f;
+	private float goBackTimer = 1.0f;
 	
 	private bool Dir1 = false;
 	private bool Dir2 = false;
@@ -57,15 +58,18 @@ public class ScrubLord : MonoBehaviour {
 		transform.Translate (Vector3.forward * enemyMovementSpeed * Time.deltaTime);
 		
 		//if the location of the player is close attack the player with a dash or hit
-		if (targetDistance < 3.0f) 
+		if (targetDistance < 2.0f) 
 		{
-			enemyMovementSpeed = 0;
+			enemyMovementSpeed = -17.5f;
+
+			goBackTimer -= Time.deltaTime;
+			if(goBackTimer < 0)
+			{
+				enemyMovementSpeed = 17.5f;
+				goBackTimer = 1.0f;
+			}
 		}
 
-		if (targetDistance > 3.0f) 
-		{
-			enemyMovementSpeed = 10.0f;
-		}
 		
 		throwTimer -= Time.deltaTime;
 		if (throwTimer < 1.5f) 

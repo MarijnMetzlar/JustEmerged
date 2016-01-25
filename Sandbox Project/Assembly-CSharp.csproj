@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\Player\RotateGunsMini.cs" />
      <Compile Include="Assets\Scripts\Player\RotateGunsTwin.cs" />
      <Compile Include="Assets\Scripts\PlayerTeleportation.cs" />
+     <Compile Include="Assets\Scripts\ToHome.cs" />
      <Compile Include="Assets\Scripts\Tower\SpawnTower.cs" />
      <Compile Include="Assets\Scripts\Tower\Tower.cs" />
      <Compile Include="Assets\Scripts\Treasure\CollectablePoint.cs" />

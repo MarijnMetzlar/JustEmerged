@@ -67,8 +67,8 @@ public class HittingEnemies : MonoBehaviour {
 
 		if(enemyType == 5 && healthPoints <= 0)
 		{
-			Debug.Log("you killed 1 miniboss");
 			MiniBossKills -= 1;
+			//camera change?
 		}
 	}
 }
