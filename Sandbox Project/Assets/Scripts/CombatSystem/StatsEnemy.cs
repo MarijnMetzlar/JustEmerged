@@ -20,6 +20,9 @@ public class StatsEnemy : MonoBehaviour {
 	[Header("MiniSlime")]
     public float hpMiniSlime = 5;
     public float dmgMiniSlime = 1;
+
+	[Header("Snake")]
+	public float hpSnake = 5;
     
 	[Header("SlimeBoss")]
 	public float hpSlimeBoss = 300;
@@ -30,4 +33,7 @@ public class StatsEnemy : MonoBehaviour {
 	public float hpScrubLord = 100;
 	public float dmgPhysicalScrubLord = 3;
 	public float dmgRangeScrubLord = 4;
+
+	[Header("CrystalEnemy")]
+	public float hpCrystalEnemy = 400;
 }

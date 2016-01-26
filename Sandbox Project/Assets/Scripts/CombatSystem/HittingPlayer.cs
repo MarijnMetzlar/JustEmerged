@@ -27,6 +27,11 @@ public class HittingPlayer : MonoBehaviour {
 			healthPoints = healthPoints - 2;
 		}
 
+		if (other.gameObject.tag == "Snake") 
+		{
+			healthPoints = healthPoints - 1;
+		}
+
 		if (other.gameObject.tag == "MetalRocket") 
 		{
 			healthPoints = healthPoints - 2;
@@ -50,13 +55,12 @@ public class HittingPlayer : MonoBehaviour {
 
 		if (other.gameObject.tag == "Spike") 
 		{
-			healthPoints = healthPoints - 5;
+			healthPoints = healthPoints - 3;
 			Destroy(other.gameObject);
 		}
 
 		if (other.gameObject.tag == "ScrubLord") 
 		{
-			Debug.Log("ja ok");
 			healthPoints = healthPoints - 2;
 		}
 	}

@@ -86,10 +86,11 @@ public class SnakeEnemy : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-
-		Debug.Log ("ouch");
-		//when the player got hit the snail will back off for some time
-		chargeAttack = false;
-		hasAttacked = true;
+		if (other.gameObject.tag == "Player") 
+		{
+			//when the player got hit the snail will back off for some time
+			chargeAttack = false;
+			hasAttacked = true;
+		}
 	}
 }

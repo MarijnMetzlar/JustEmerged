@@ -7,22 +7,21 @@ public class CrystalBoss : MonoBehaviour {
 	public float enemyLookDistance;
 	public float attackDistance;
 	public float damping;
-	private float enemyMovementSpeed = 17.5f;
 
 	public float spawnDistance;
 	public float enemyHeight;
 
-	private Vector3 pointA;
-	private Vector3 pointB;
+	public Vector3 crystalBossPosition;
+	public Transform snakePrefab;
 
 	public Transform spikePrefab;
 
-	private float throwTimer = 5.0f;
+	public float throwTimer = 5.0f;
+	private float spawnEnemies = 10.0f;
 
 	private int soundEffect;
 	public AudioSource evilLaugh;
-
-
+	
 	void Start ()
 	{
 		GameObject _Spike = GameObject.FindGameObjectWithTag ("Spike");
@@ -37,20 +36,22 @@ public class CrystalBoss : MonoBehaviour {
 		if (targetDistance < enemyLookDistance) 
 		{
 			LookAtPlayer ();
-			WalkingPattern ();
 			Attack ();
-		}
+
+			spawnEnemies -= Time.deltaTime;
+			if(spawnEnemies < 0)
+			{
+				SpawnEnemies ();
+				spawnEnemies = 10.0f;
+			}
+
+		} 
 	}
 
 	void LookAtPlayer ()
 	{
 		Quaternion rotation = Quaternion.LookRotation (GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>().position - transform.position);
 		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
-	}
-
-	void WalkingPattern ()
-	{
-		//ok
 	}
 
 	void Attack ()
@@ -60,7 +61,6 @@ public class CrystalBoss : MonoBehaviour {
 		{
 			soundEffect += 1;
 			//play animation I guess
-			enemyMovementSpeed = 0;
 		}
 		
 		if (soundEffect == 1) 
@@ -72,7 +72,6 @@ public class CrystalBoss : MonoBehaviour {
 		{
 			ThrowSpike ();
 			throwTimer = 5.0f;
-			enemyMovementSpeed = 10;
 			soundEffect = 0;
 		}
 	}
@@ -80,8 +79,15 @@ public class CrystalBoss : MonoBehaviour {
 	void ThrowSpike ()
 	{
 		Vector3 enemyPosition = transform.position + (transform.forward * spawnDistance) + (transform.up * enemyHeight);
-		Instantiate(spikePrefab, new Vector3(enemyPosition.x + 5.0f, enemyPosition.y, enemyPosition.z), transform.rotation);
-		Instantiate(spikePrefab, new Vector3(enemyPosition.x, enemyPosition.y, enemyPosition.z), transform.rotation);
-		Instantiate(spikePrefab, new Vector3(enemyPosition.x - 5.0f, enemyPosition.y, enemyPosition.z), transform.rotation);
+		Instantiate(spikePrefab, enemyPosition, transform.rotation);
+	}
+
+	void SpawnEnemies()
+	{
+		crystalBossPosition = GameObject.FindGameObjectWithTag ("CrystalBoss").GetComponent<Transform> ().position;
+		
+		Instantiate (snakePrefab, new Vector3 (crystalBossPosition.x + 30.0f, crystalBossPosition.y + 2.0f, crystalBossPosition.z), Quaternion.identity);
+		Instantiate (snakePrefab, new Vector3 (crystalBossPosition.x - 30.0f, crystalBossPosition.y + 2.0f, crystalBossPosition.z), Quaternion.identity);
+		Instantiate (snakePrefab, new Vector3 (crystalBossPosition.x, crystalBossPosition.y + 2.0f, crystalBossPosition.z + 30.0f), Quaternion.identity);
 	}
 }

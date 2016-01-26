@@ -31,6 +31,12 @@ public class HittingEnemies : MonoBehaviour {
 			healthPoints = stats.hpMiniSlime;
 			damagePoints = stats.dmgMiniSlime;
 		} 
+
+		else if (enemyType == 7)
+		{												//Snake
+			healthPoints = stats.hpSnake;
+		} 
+
 		else if (enemyType == 3) 
 		{												//Slime Boss
 			healthPoints = stats.hpSlimeBoss;
@@ -46,6 +52,11 @@ public class HittingEnemies : MonoBehaviour {
 		{												//Scrub Lord
 			healthPoints = stats.hpScrubLord;
 			damagePoints = stats.dmgPhysicalScrubLord;
+		}
+
+		else if (enemyType == 6) 
+		{												//Crystal Boss
+			healthPoints = stats.hpCrystalEnemy;
 		}
 
 

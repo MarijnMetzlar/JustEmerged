@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bosses\ScrubLord.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bosses\CrystalBoss.cs">
     <Files>
-      <File FileName="Assets\Scripts\Bosses\CrystalBoss.cs" Line="52" Column="54" />
-      <File FileName="Assets\Scripts\Bosses\ScrubLord.cs" Line="64" Column="2" />
+      <File FileName="Assets\Scripts\Bosses\CrystalBoss.cs" Line="86" Column="3" />
+      <File FileName="Assets\Scripts\Bosses\ScrubLord.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bosses\SlimeBoss.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

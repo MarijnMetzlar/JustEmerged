@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: fd6c101528b22884c9d103616c1bace6
+timeCreated: 1453766153
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Backcrystal L
+    100002: Backcrystal M
+    100004: Backcrystal M001
+    100006: Backcrystal R
+    100008: Bicep L001
+    100010: Bicep R
+    100012: //RootNode
+    100014: body
+    100016: Bone RS
+    100018: BoneFeet
+    100020: BoneHead
+    100022: BoneHip
+    100024: BoneLA
+    100026: BoneLH
+    100028: BoneLS
+    100030: BoneNeck
+    100032: BoneRA
+    100034: BoneRH
+    100036: Eye
+    100038: eye01
+    100040: eye02
+    100042: eye03
+    100044: head
+    100046: Legrock 002
+    100048: Legrock 003
+    100050: Legrock 01
+    100052: lower body
+    100054: LowerArm R
+    100056: Projectile
+    100058: Projectile001
+    100060: Projectile002
+    100062: SC R01
+    100064: Shoulder L
+    100066: Shoulder R
+    400000: Backcrystal L
+    400002: Backcrystal M
+    400004: Backcrystal M001
+    400006: Backcrystal R
+    400008: Bicep L001
+    400010: Bicep R
+    400012: //RootNode
+    400014: body
+    400016: Bone RS
+    400018: BoneFeet
+    400020: BoneHead
+    400022: BoneHip
+    400024: BoneLA
+    400026: BoneLH
+    400028: BoneLS
+    400030: BoneNeck
+    400032: BoneRA
+    400034: BoneRH
+    400036: Eye
+    400038: eye01
+    400040: eye02
+    400042: eye03
+    400044: head
+    400046: Legrock 002
+    400048: Legrock 003
+    400050: Legrock 01
+    400052: lower body
+    400054: LowerArm R
+    400056: Projectile
+    400058: Projectile001
+    400060: Projectile002
+    400062: SC R01
+    400064: Shoulder L
+    400066: Shoulder R
+    2300000: Backcrystal L
+    2300002: Backcrystal M
+    2300004: Backcrystal M001
+    2300006: Backcrystal R
+    2300008: Bicep L001
+    2300010: Bicep R
+    2300012: body
+    2300014: Eye
+    2300016: eye01
+    2300018: eye02
+    2300020: eye03
+    2300022: head
+    2300024: Legrock 002
+    2300026: Legrock 003
+    2300028: Legrock 01
+    2300030: lower body
+    2300032: LowerArm R
+    2300034: Projectile
+    2300036: Projectile001
+    2300038: Projectile002
+    2300040: SC R01
+    2300042: Shoulder L
+    2300044: Shoulder R
+    3300000: Backcrystal L
+    3300002: Backcrystal M
+    3300004: Backcrystal M001
+    3300006: Backcrystal R
+    3300008: Bicep L001
+    3300010: Bicep R
+    3300012: body
+    3300014: Eye
+    3300016: eye01
+    3300018: eye02
+    3300020: eye03
+    3300022: head
+    3300024: Legrock 002
+    3300026: Legrock 003
+    3300028: Legrock 01
+    3300030: lower body
+    3300032: LowerArm R
+    3300034: Projectile
+    3300036: Projectile001
+    3300038: Projectile002
+    3300040: SC R01
+    3300042: Shoulder L
+    3300044: Shoulder R
+    4300000: LowerArm R
+    4300002: Projectile
+    4300004: Projectile001
+    4300006: Projectile002
+    4300008: Bicep R
+    4300010: Backcrystal M001
+    4300012: Bicep L001
+    4300014: Legrock 002
+    4300016: Legrock 003
+    4300018: Legrock 01
+    4300020: Shoulder R
+    4300022: SC R01
+    4300024: Shoulder L
+    4300026: head
+    4300028: eye03
+    4300030: eye02
+    4300032: eye01
+    4300034: Eye
+    4300036: body
+    4300038: Backcrystal R
+    4300040: Backcrystal M
+    4300042: Backcrystal L
+    4300044: lower body
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
